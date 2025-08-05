@@ -1,0 +1,21 @@
+.login-button {
+  background-color: var(--primary);
+  color: var(--white) !important;
+  padding: 8px 16px;
+  border-radius: 22px;
+  border: 2px solid var(--white);
+}
+
+.hero-login {
+  background-color: var(--primary);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: var(--white);
+  text-decoration: none;
+  border: 2px solid var(--white);
+}
+
+.btn {
+    font-family: ElMessiri;
+    font-size: 20px;
+}

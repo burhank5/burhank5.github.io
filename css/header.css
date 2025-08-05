@@ -1,0 +1,114 @@
+.top-nav {
+  background: linear-gradient(to right, #063541, #1998b2);
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: ElMessiri;
+}
+
+.navigation .active {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 8px 16px;
+  border-radius: 24px;
+}
+
+/** Overriden CSS **/
+.top-nav img {
+    width: 80px;
+    height: 80px;
+}
+    
+.login-button img, .login-button-hero img {
+    width: 24px;
+    height: 28px;
+    padding: 4px;
+}
+
+/** Responsive menus **/
+.menu-toggle {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #063541;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+@media (min-width: 992px) {
+    .navigation {
+        display: block;
+    }
+    .hamburger {
+        display: none;
+    }
+    #menuToggle {
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navigation {
+        display: none !important;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .mobile-menu.show {
+        display: flex;
+    }
+}
+
+.mobile-menu a,
+.mobile-menu .login-button {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.show a,
+.mobile-menu.show .login-button {
+  opacity: 1;
+  transform: translateY(0);
+  font-family: ElMessiri;
+  color: var(--white);
+}
+
+/* Transform to X */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+  
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}

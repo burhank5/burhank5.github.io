@@ -1,0 +1,14 @@
+
+:root {
+    --primary: #F09825;
+    --white: #ffffff;
+    --black: #000000;
+    --title-text-primary: #0E4653;
+    --secondary: #E9E6D7;
+}
+
+@font-face {
+    font-family: ElMessiri;
+    src: url(../ElMessiri.ttf);
+  }
+  

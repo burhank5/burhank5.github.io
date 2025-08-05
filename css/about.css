@@ -1,0 +1,242 @@
+@font-face { font-family: essai; src: url('essai.ttf'); }
+
+body {
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    margin: 0;
+    padding: 0;
+}
+  
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-nav {
+    background: linear-gradient(to right, #063541, #1998b2);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumb {
+    background: linear-gradient(to right, #0e5b6d, #178aa3);
+    color: white;
+    padding: 20px;
+}
+  
+
+.breadcrumb h1 {
+  margin: 0;
+}
+
+.breadcrumb p {
+  margin: 5px 0;
+  color: #ffc107;
+}
+
+.leaders {
+    /* background: linear-gradient(to bottom, #d4eff1, #ecf6f7); */
+    background: linear-gradient(to right, #063541, #1998b2);
+    padding: 30px 20px;
+    text-align: center;
+    padding-bottom: 0px;
+}
+  
+
+.leader-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 44px;
+}
+
+.leader-row a {
+  max-width: 175px;
+  text-align: center;
+  color: white;
+}
+
+.leader-row img {
+  width: 100%;
+  border: 3px solid #d4af37;
+  border-radius: 8px;
+}
+
+.leader-pattern-div {
+    background-image: url(pattern.png);
+    /* background: url(pattern.png), linear-gradient(to bottom, #d4eff1, #ecf6f7); */
+    background-repeat: repeat-x;
+    height: 80px;
+    background-size: auto 80px;
+    /* background-color: linear-gradient(to bottom, #d4eff1, #ecf6f7); */
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.about-text {
+  background: url('pattern-bg.png') no-repeat center;
+  background-size: cover;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-text h2 {
+  color: #0c4a5e;
+}
+
+.below-about {
+    width: 410px;
+}
+
+.about-text p {
+    max-width: auto;
+    color: var(--title-text-primary);
+    line-height: 60px;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-size: 30px;
+    font-weight: 300;
+    font-family: ElMessiri;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background: orange;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+.special-representatives {
+    background:
+    linear-gradient(to bottom, rgba(12, 74, 94, 0.96), rgba(12, 74, 94, 0.96)),
+      url('symphony.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+
+.rep-grid a {
+  background-color: #0b3c4b; /* slightly lighter than section background */
+  border: 2px solid #16778f; /* teal border */
+  border-radius: 20px;
+  padding: 20px 15px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.rep-grid a:hover {
+  transform: translateY(-5px);
+}
+
+
+.rep-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.rep-grid img {
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+
+.rep-grid p {
+margin-top: 10px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1.5px solid #666666;
+}
+
+.footer-title span, .footer-subtitle span {
+  color: orange;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.social-icon {
+  width: 46px;
+  height: 40px;
+  margin: 5px 26px;
+  border-radius: 13px;
+}
+
+footer a {
+  color: orange;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/** Overriden CSS **/
+
+.lead strong {
+  font-weight: 700;
+}
+
+.leaders p {
+  font-family: ElMessiri;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.about-text .title-text {
+  color: var(--title-text-primary);
+  font-family: ElMessiri;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.rounded-40 {
+  border-radius: 40px;
+}
+
+.bg-dark-gradient {
+  background-color: #436670;
+}
+
+.padding-40 {
+  padding: 40px !important;
+}
+
+.special-representatives p {
+  font-family: ElMessiri;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--white);
+}
+
+@media screen and (max-width: 990px) {
+  .about-text p {
+    margin-left: unset;
+    margin-right: unset;
+    font-size: 20px;
+  }
+}

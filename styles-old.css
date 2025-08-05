@@ -1,0 +1,145 @@
+@font-face { font-family: essai; src: url('essai.ttf'); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: "Segoe UI", sans-serif; */
+  background-color: #f5f5f5;
+}
+
+.top-nav {
+  background: linear-gradient(to right, #063541, #1998b2);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.navigation a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navigation .active {
+    color: orange;
+    border: 1px solid orange;
+    padding: 10px;
+    border-radius: 24px;
+}
+
+.navigation .login-button {
+  background-color: orange;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 22px;
+}
+
+/**  **/
+.hero {
+  background: url('mosque-bg.png') center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-style: italic;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero-text .arabic-text {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: 'Scheherazade', serif;
+}
+
+.hero-text .subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.hero-text .hero-login {
+  background-color: orange;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #0c4a5e;
+  color: white;
+  padding: 30px 20px 10px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1.5px solid #666666;
+}
+
+.footer-logo {
+  height: 90px;
+  margin-bottom: 10px;
+}
+
+.footer-title span, .footer-subtitle span {
+  color: orange;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.social-icon {
+    width: 46px;
+    height: 40px;
+    margin: 5px 26px;
+    border-radius: 13px;
+}
+
+footer a {
+  color: orange;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ddd;
+  text-align: center;
+}
+
+.footer-title {
+    font-size: 44px;
+}
+
+.footer-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.footer-mid {
+    text-align: center;
+    margin-bottom: 42px;
+}

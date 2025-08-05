@@ -1,0 +1,109 @@
+.service-heading {
+    font-family: ElMessiri;
+    font-weight: 200;
+    font-size: 20px;
+    color: var(--title-text-primary);
+}
+
+.service-subtext {
+    font-family: ElMessiri;
+    font-weight: 700;
+    font-size: 62px;
+    color: var(--primary);
+}
+
+.service-content-subtext {
+    font-family: ElMessiri;
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--title-text-primary);
+}
+
+.image-overview {
+    margin-top: 64px;
+}
+
+.image-overview img.service-overview-image {
+    display: block;
+    margin: auto;
+    opacity: .2;
+    border-radius: 10px;
+    border-bottom-right-radius: 174px;
+}
+
+.service-overview-image {
+    width: 290px;
+    height: 391px;
+}
+
+/** For Caption **/
+.service-div {
+    position: relative;
+    width: 290px;
+    height: 391px;
+    margin: auto;
+    background: linear-gradient(#000000, #55B9A9);
+    border-radius: 10px;
+    border-bottom-right-radius: 174px;
+}
+
+.service-div::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90px;
+    height: 90px;
+    background-color: whitesmoke;
+    border-top-left-radius: 60% 60%;
+    z-index: 1;
+}
+
+.service-div>img, .overlay-text {
+    position: absolute;
+    bottom: 0;
+}
+
+.overlay-text {
+    padding: 12px;
+    font-family: ElMessiri;
+    font-weight: 700;
+    color: var(--white);
+    font-size: 18px;
+}
+
+.service-vector-div {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    z-index: 2;
+    width: 78px;
+    height: 78px;
+}
+
+.image-overview img.overlay-vector {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 78px;
+    padding: 20px;
+}
+/* 
+.icon-badge {
+    position: absolute;
+    bottom: 1px;
+    right: 2px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    z-index: 2;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 1rem;
+} */

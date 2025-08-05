@@ -1,0 +1,76 @@
+@font-face { font-family: essai; src: url('essai.ttf'); }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  /* font-family: 'Segoe UI', sans-serif; */
+}
+
+p {
+  font-family: ElMessiri;
+}
+
+.hero {
+  background: url('../assets/mosque-bg.png') center/cover no-repeat;
+  height: 600px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-style: italic;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero .arabic-text {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: 'Scheherazade', serif;
+}
+
+.hero .subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/** Overriden CSS **/
+
+.hero img.letterhead {
+    width: 900px;
+}
+
+.hero .subtitle {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: ElMessiri;
+    line-height: 50px;
+}
+
+.hero .subtitle strong{
+    color: var(--primary);
+} 
+
+.breadcrumb-section h1, .breadcrumb-section p {
+    font-family: ElMessiri;
+}
+
+.container h2 {
+    font-family: ElMessiri;
+    font-weight: bold;
+    font-size: 40px;
+    color: var(--text-title-primary);
+}
+
+@media screen and (max-width: 990px) {
+    .hero img.letterhead {
+      width: 90%;
+    }
+    .hero .subtitle {
+        font-size: 20px;
+    }
+}
