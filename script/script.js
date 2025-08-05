@@ -41,17 +41,50 @@ document.addEventListener('DOMContentLoaded', function () {
         item.style.display = 'block';
 
         // Use delay for staggered animation
-        setTimeout(() => {
+        //setTimeout(() => {
           if (filter === 'all' || category === filter) {
             item.classList.remove('hide');
             item.style.display = 'block';
           } else {
             item.classList.add('hide');
+            item.style.display = 'none'
             // Wait for animation before hiding completely
-            setTimeout(() => item.style.display = 'none', 400);
+            //setTimeout(() => item.style.display = 'none', 400);
           }
-        }, index * 100); // stagger by 100ms
+        //}, index * 100); // stagger by 100ms
       });
     });
   });
+
+  //Testimonial carousel
+  const cards = document.querySelectorAll(".testimonial-item");
+  let startIndex = 0;
+
+  function showCards(index) {
+    cards.forEach((card, i) => {
+      card.classList.add("d-none");
+      if (i >= index && i < index + 3) {
+        card.classList.remove("d-none");
+      }
+    });
+  }
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    startIndex = (startIndex - 1 + cards.length) % cards.length;
+    showCards(startIndex);
+  });
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    startIndex = (startIndex + 1) % cards.length;
+    showCards(startIndex);
+  });
+
+  // Initialize
+  showCards(startIndex);
+
+  // function scrollCarousel(direction) {
+  //   const carousel = document.querySelector('.testimonial-carousel');
+  //   const scrollAmount = carousel.offsetWidth * 0.33; // scroll 1 card width
+  //   carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  // }
 });

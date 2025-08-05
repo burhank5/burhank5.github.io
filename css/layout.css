@@ -11,7 +11,7 @@ body {
   /* font-family: 'Segoe UI', sans-serif; */
 }
 
-p {
+p, h1, h2, h3, h5 {
   font-family: ElMessiri;
 }
 
@@ -66,7 +66,7 @@ p {
     color: var(--text-title-primary);
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1023px) {
     .hero img.letterhead {
       width: 90%;
     }

@@ -57,3 +57,16 @@
     background-size: 58px;
     opacity: .55;
 }
+
+@media screen and (max-width: 1023px) {
+  .footer-logo {
+    width: 100px;
+    height: 100px;
+  }
+  .footer-title {
+    font-size: 1.2rem;
+  }
+  .footer-subtitle {
+    font-size: 16px;
+  }
+}

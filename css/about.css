@@ -233,10 +233,11 @@ footer a:hover {
   color: var(--white);
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1023px) {
   .about-text p {
     margin-left: unset;
     margin-right: unset;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 34px;
   }
 }

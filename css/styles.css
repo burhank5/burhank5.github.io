@@ -43,5 +43,28 @@
     object-fit: cover;
     border-radius: 10px;
 }
-  
-  
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.btn-teal {
+    background-color: #004d4d;
+    color: white;
+    width: 48px;
+    height: 44px;
+  }
+
+  .testimonial-item img {
+    height: 280px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    #testimonial-carousel .col-md-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
