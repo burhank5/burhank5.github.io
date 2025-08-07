@@ -57,30 +57,69 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   //Testimonial carousel
+  // const cards = document.querySelectorAll(".testimonial-item");
+  // let startIndex = 0;
+
+  // function showCards(index) {
+  //   cards.forEach((card, i) => {
+  //     card.classList.add("d-none");
+  //     if (i >= index && i < index + 3) {
+  //       card.classList.remove("d-none");
+  //     }
+  //   });
+  // }
+
+  // document.getElementById("prevBtn").addEventListener("click", () => {
+  //   startIndex = (startIndex - 1 + cards.length) % cards.length;
+  //   showCards(startIndex);
+  // });
+
+  // document.getElementById("nextBtn").addEventListener("click", () => {
+  //   startIndex = (startIndex + 1) % cards.length;
+  //   showCards(startIndex);
+  // });
+
+  // // Initialize
+  // showCards(startIndex);
+
   const cards = document.querySelectorAll(".testimonial-item");
   let startIndex = 0;
 
+  // Function to detect how many cards should be shown based on screen width
+  function getCardsPerView() {
+    return window.innerWidth < 768 ? 1 : 3; // 1 card on mobile, 3 on desktop
+  }
+
   function showCards(index) {
+    const cardsPerView = getCardsPerView();
     cards.forEach((card, i) => {
       card.classList.add("d-none");
-      if (i >= index && i < index + 3) {
+      if (i >= index && i < index + cardsPerView) {
         card.classList.remove("d-none");
       }
     });
   }
 
   document.getElementById("prevBtn").addEventListener("click", () => {
-    startIndex = (startIndex - 1 + cards.length) % cards.length;
+    const cardsPerView = getCardsPerView();
+    startIndex = (startIndex - cardsPerView + cards.length) % cards.length;
     showCards(startIndex);
   });
 
   document.getElementById("nextBtn").addEventListener("click", () => {
-    startIndex = (startIndex + 1) % cards.length;
+    const cardsPerView = getCardsPerView();
+    startIndex = (startIndex + cardsPerView) % cards.length;
     showCards(startIndex);
   });
 
-  // Initialize
+  // Handle resizing to update card layout
+  window.addEventListener("resize", () => {
+    showCards(startIndex);
+  });
+
+  // Initial display
   showCards(startIndex);
+
 
   // function scrollCarousel(direction) {
   //   const carousel = document.querySelector('.testimonial-carousel');

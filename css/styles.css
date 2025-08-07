@@ -9,6 +9,14 @@
 @import url(services.css);
 
 /** Misc CSS **/
+.center-block-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2%;
+    margin-bottom: 2%;
+}
+
 .filter-outline {
     background-color: var(--secondary);
     border-radius: 60px;
@@ -54,17 +62,47 @@
     color: white;
     width: 48px;
     height: 44px;
-  }
+}
 
-  .testimonial-item img {
+.testimonial-item img {
     height: 280px;
     object-fit: cover;
     width: 100%;
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     #testimonial-carousel .col-md-4 {
-      flex: 0 0 100%;
-      max-width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
-  }
+}
+
+.locations .location-link {
+    background-color: var(--title-text-primary);
+}
+.locations .location-link h3 {
+    color: var(--white);
+}
+
+.locations .bi.bi-arrow-up-right-circle-fill {
+    color: var(--secondary);
+}
+
+.locations .bi-arrow-up-right-circle-fill::before {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1023px) {
+    .contact-block {
+        margin-top: 130%;
+    }
+}
+
+/* Fix for small devices */
+@media (min-width: 1024px) {
+    .contact-wrapper {
+        margin-top: -50%;
+        margin-bottom: 22%;
+    }
+}
+  
