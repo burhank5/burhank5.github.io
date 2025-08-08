@@ -79,6 +79,7 @@
 
 .locations .location-link {
     background-color: var(--title-text-primary);
+    height: 105px;
 }
 .locations .location-link h3 {
     color: var(--white);
