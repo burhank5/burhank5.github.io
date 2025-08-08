@@ -57,6 +57,27 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   //Testimonial carousel
+  var owl = $("#testimonial-carousel-owl");
+
+  owl.owlCarousel({
+    loop: true,
+    margin: 20,
+    dots: true, // scroll indicators
+    nav: false,
+    responsive: {
+      0: { items: 1 },
+      768: { items: 2 },
+      1024: { items: 3 }
+    }
+  });
+
+  // arrow events left - right
+  $("#prevBtn").click(function(){
+    owl.trigger('prev.owl.carousel');
+  });
+  $("#nextBtn").click(function(){
+    owl.trigger('next.owl.carousel');
+  });
   // const cards = document.querySelectorAll(".testimonial-item");
   // let startIndex = 0;
 
