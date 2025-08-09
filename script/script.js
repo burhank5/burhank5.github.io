@@ -1,9 +1,9 @@
 
 // menu.js
 document.addEventListener('DOMContentLoaded', function () {
-  const toggleBtn = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  const navLinks = mobileNav.querySelectorAll('.nav-link, .login-button');
+  const toggleBtn = document.getElementById('menuToggle');  // The hamburger menu button
+  const mobileNav = document.getElementById('mobileNav'); // The mobile navigation container
+  const navLinks = mobileNav.querySelectorAll('.nav-link, .login-button'); // All navigation links + login button
 
   toggleBtn.addEventListener('click', () => {
     toggleBtn.classList.toggle('active');         // Toggle hamburger-X
