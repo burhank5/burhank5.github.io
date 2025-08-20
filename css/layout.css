@@ -14,7 +14,7 @@ body {
   flex-direction: column !important;
 }
 
-section {
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl, section {
   flex: 1;
 }
 
