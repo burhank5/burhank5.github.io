@@ -18,6 +18,10 @@ body {
   flex: 1;
 }
 
+section.breadcrumb-section {
+  flex: unset !important;
+}
+
 p, h1, h2, h3, h4, h5, .form-control  {
   font-family: ElMessiri;
 }
