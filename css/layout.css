@@ -8,9 +8,7 @@
 
 body {
   background-color: #f5f5f5;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+  /* font-family: 'Segoe UI', sans-serif; */
 }
 
 p, h1, h2, h3, h4, h5, .form-control  {
@@ -19,7 +17,7 @@ p, h1, h2, h3, h4, h5, .form-control  {
 
 .hero {
   background: url('../assets/mosque-bg.png') center/cover no-repeat;
-  height: 620px;
+  height: 100vh;
   text-align: center;
 }
 
