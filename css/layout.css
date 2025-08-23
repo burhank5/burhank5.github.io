@@ -9,7 +9,7 @@
 body {
   background-color: #f5f5f5;
   /* font-family: 'Segoe UI', sans-serif; */
-  min-height: 150vh;
+  min-height: 100vh;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -22,8 +22,21 @@ section.breadcrumb-section {
   flex: unset !important;
 }
 
-p, h1, h2, h3, h4, h5, .form-control  {
+p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span  {
   font-family: ElMessiri;
+}
+
+ul {
+  list-style-image: url("../assets/li-pattern.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px;
+}
+
+li {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
 .hero {
@@ -84,4 +97,79 @@ p, h1, h2, h3, h4, h5, .form-control  {
     .hero .subtitle {
         font-size: 20px;
     }
+}
+
+/** After Login Header CSS **/
+.nav-item::marker {
+  content: "";
+}
+.after-login-nav {
+  margin: 0 auto;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(248, 248, 248, 0.1) 80%, rgba(245, 237, 237, 0.5) 72%);
+  border-radius: 50px;
+  height: 65px;
+}
+
+.after-login-nav a {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--secondary);
+  padding: 1%;
+  display: flex;
+}
+
+.after-login-nav a.dropdown-item {
+  color: var(--primary);
+  padding: 10px;
+}
+
+.after-login-nav .nav-item.active a {
+  color: var(--primary);
+  padding: 10px;
+}
+
+.after-login-nav .nav-item {
+  margin: 0 !important;   /* remove bootstrap default spacing */
+  padding-left: 10px; /* reset */
+}
+
+.after-login-nav .nav-item.active .nav-link {
+  background-color: #F4F1E6;   /* cream pill background */
+  color: #0E4653;              /* text color */
+  border-radius: 50px;
+  
+  /* remove default gaps */
+  margin: 0 !important; 
+  padding: 16px 18px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* keeps icon & text spaced nicely */
+}
+
+.after-login-nav-icons {
+  display: flex;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 5px 10px 5px 10px;
+}
+
+.after-login-nav .dropdown-toggle::after {
+  margin-top: 10px;
+}
+
+.after-login-nav .active .dropdown-toggle::after {
+  margin-top: -6px;
+}
+
+.avatar-profile {
+  display: flex;
+  gap: 10px;
+}
+
+.avatar-profile img {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
 }

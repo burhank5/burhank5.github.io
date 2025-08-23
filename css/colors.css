@@ -5,7 +5,9 @@
     --black: #000000;
     --title-text-primary: #0E4653;
     --secondary: #E9E6D7;
+    --tertiary: #F1EFE5;
     --hover: #00695C;
+    --footer-color: #0E4653E5;
 }
 
 @font-face {

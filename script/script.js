@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //Gallery Toggle
   const buttons = document.querySelectorAll('[data-filter]');
   const items = document.querySelectorAll('.gallery-item');
-
+  
   buttons.forEach(btn => {
     btn.addEventListener('click', function () {
       // Activate selected button
@@ -55,6 +55,35 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+  // Preview selected file name
+  function previewImage(inputId, previewId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+  
+    input.addEventListener("change", function () {
+      preview.innerHTML = ""; // clear old preview
+      if (this.files && this.files[0]) {
+        const file = this.files[0];
+        const reader = new FileReader();
+  
+        reader.onload = function (e) {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.classList.add("img-fluid", "mt-2", "rounded", "shadow");
+          img.style.maxHeight = "150px";
+          preview.appendChild(img);
+        };
+  
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+  
+  // Apply preview function to all inputs
+  previewImage("passportInput", "passportPreview");
+  previewImage("panInput", "panPreview");
+  previewImage("photoInput", "photoPreview");
 
   //Testimonial carousel
   var owl = $("#testimonial-carousel-owl");

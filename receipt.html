@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receipts - Fayz-E-Husayni Trust</title>
+  <link rel="icon" type="image/x-icon" href="assets/faveicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <script src="script/script.js" ></script>
+</head>
+<body>  
+  <!-- HEADER -->
+  <header class="top-nav d-flex justify-content-between align-items-center p-3">
+    <a href="index.html" class="logo">
+      <img src="assets/fayz-logo.png" alt="Logo" class="img-fluid">
+    </a>
+    <!-- <nav class="navigation d-flex gap-3 align-items-center">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about-us-1.html" class="nav-link">About Us</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="testimonials.html" class="nav-link">Testimonial</a>
+      <a href="destination.html" class="nav-link">Destination</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png"></a>
+    </nav> -->
+
+    <!-- After login Navigation -->
+    <nav class="after-login-nav d-flex gap-3 align-items-center">
+      <!-- Destination Dropdown -->
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="destinationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="after-login-nav-icons" src="assets/after-login-destination.png" />Destination</a>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Destination 1</a></li>
+          <li><a class="dropdown-item" href="#">Destination 2</a></li>
+        </ul>
+      </li>
+      <!-- Announcements -->
+      <li class="nav-item">
+        <a class="nav-link" href="#"><img class="after-login-nav-icons" src="assets/after-login-announcements.png" />Announcements</a>
+      </li>
+
+      <!-- Registration -->
+      <li class="nav-item">
+        <a class="nav-link" href="#"><img class="after-login-nav-icons" src="assets/after-login-registration.png" />Registration</a>
+      </li>
+
+      <!-- My Bookings Dropdown -->
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="bookingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="after-login-nav-icons" src="assets/after-login-bookings.png" />My Bookings
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Upcoming</a></li>
+          <li><a class="dropdown-item" href="#">Past</a></li>
+        </ul>
+      </li>
+    </nav>
+    <!-- After login Navigation Ends -->
+
+    <!-- Avatar Right -->
+    <div class="avatar-profile dropdown">
+      <img src="assets/login-profile-avatar.png" alt="Avatar" />
+      <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="ms-2">Taha</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Logout</a></li>
+      </ul>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu px-3 py-2" id="mobileNav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about-us-1.html" class="nav-link">About Us</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="testimonials.html" class="nav-link">Testimonial</a>
+    <a href="destination.html" class="nav-link">Destination</a>
+    <a href="contact.html" class="nav-link">Contact Us</a>
+    <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png" height="20"></a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <section class="breadcrumb-section py-4 px-3 text-white" style="background: linear-gradient(to right, #0e5b6d, #178aa3);">
+    <div class="container">
+      <h1 class="mb-1">Receipts</h1>
+      <p><a href="index.html" class="text-warning text-decoration-none">Dashboard</a> → <a href="bookings.html" class="text-warning text-decoration-none">My Bookings</a> → Receipts</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-5 pattern-background position-relative text-center" style="background: url('assets/about-pattern-bg.png') repeat center;">
+    <div class="container">
+
+    <div class="filter-scroll mb-4">
+        <button class="btn filter-outline flex-shrink-0 active" data-filter="statement">Statement</button>
+        <button class="btn filter-outline flex-shrink-0" data-filter="receipts">Receipts</button>
+        <button class="btn filter-outline flex-shrink-0" data-filter="donations">Donations</button>
+    </div>   
+      
+      <div class="table-responsive gallery-item" data-category="statement">
+        <table class="table booking-details-table align-middle">
+          <thead>
+            <tr class="heading">
+              <th>ITS ID</th>
+              <th>Ziyarat</th>
+              <th>FH No</th>
+              <th>Coordinator Code</th>
+              <th>Amount Paid</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive gallery-item hide" data-category="receipts">
+        <table class="table booking-details-table align-middle">
+          <thead>
+            <tr class="heading">
+              <th>ITS ID</th>
+              <th>Ziyarat</th>
+              <th>FH No</th>
+              <th>Seq No</th>
+              <th>Receipt No</th>
+              <th>Coordinator Code</th>
+              <th>Receipt Amt</th>
+              <th>Receipt Count</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive gallery-item hide" data-category="donations">
+        <table class="table booking-details-table align-middle">
+          <thead>
+            <tr class="heading">
+              <th>ITS ID</th>
+              <th>Ziyarat</th>
+              <th>FH No</th>
+              <th>Seq No</th>
+              <th>Donation No</th>
+              <th>Coordinator Code</th>
+              <th>Receipt Amt</th>
+              <th>Receipt Count</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+            <tr>
+              <td>30419898</td>
+              <td>KARBALA</td>
+              <td>52712</td>
+              <td>1</td>
+              <td>23467</td>
+              <td>MHA11</td>
+              <td>40,000</td>
+              <td>1</td>
+              <td><button class="btn btn-sm mb-3 p-2 btn-cta-pay text-center"><i class="bi bi-printer-fill"></i>
+                Print Statement </button><br></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container py-4 border-bottom border-secondary text-white">
+      <div class="row align-items-center">
+        <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+          <img src="assets/fayz-logo.png" alt="Footer Logo" class="footer-logo img-fluid">
+        </div>
+        <div class="col-md-8 text-center">
+          <p class="footer-title"><strong>Fayz-E-Husayni Trust, <span>Bombay</span></strong></p>
+          <p class="footer-subtitle"><span>140+ Years</span> In The Khidmat <br />Of Hujjaj & Zaereen Kiraam</p>
+        </div>
+        <div class="col-md-2 text-center text-md-end">
+          <p>Follow Us On:</p>
+          <a href="#"><img src="assets/instagram.png" alt="Instagram" class="social-icon"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-3 copyright">
+      <p class="mb-0 text-decoration-none"><span style="color:var(--primary)">&copy; </span> <a href="#" class="text-decoration-none">Fayz-E-Husayni Trust</a>. All Rights Reserved</p>
+    </div>
+    <div class="post-footer">
+        <!-- <img src="assets/footer-symbol.png" /> -->
+    </div>
+  </footer>
+</body>
+</html>
