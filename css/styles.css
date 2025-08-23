@@ -281,9 +281,10 @@
     color: #fff;
 }
 .progress-tracker .step.active .circle {
-    background: #fff;
-    border: 14px solid #0E4653;
+    background: var(--title-text-primary);
+    border: 16px solid var(--white);
 }
+
 .progress-tracker .step::after {
     content: "";
     position: absolute;

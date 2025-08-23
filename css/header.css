@@ -83,6 +83,9 @@
     .mobile-menu.show {
         display: flex;
     }
+    .after-login-nav {
+        display: none !important;
+    }
 }
 
 .mobile-menu a,

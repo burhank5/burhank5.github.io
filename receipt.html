@@ -18,16 +18,6 @@
     <a href="index.html" class="logo">
       <img src="assets/fayz-logo.png" alt="Logo" class="img-fluid">
     </a>
-    <!-- <nav class="navigation d-flex gap-3 align-items-center">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about-us-1.html" class="nav-link">About Us</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="gallery.html" class="nav-link">Gallery</a>
-      <a href="testimonials.html" class="nav-link">Testimonial</a>
-      <a href="destination.html" class="nav-link">Destination</a>
-      <a href="contact.html" class="nav-link">Contact Us</a>
-      <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png"></a>
-    </nav> -->
 
     <!-- After login Navigation -->
     <nav class="after-login-nav d-flex gap-3 align-items-center">
@@ -43,7 +33,7 @@
       </li>
       <!-- Announcements -->
       <li class="nav-item">
-        <a class="nav-link" href="#"><img class="after-login-nav-icons" src="assets/after-login-announcements.png" />Announcements</a>
+        <a class="nav-link" href="announcements.html"><img class="after-login-nav-icons" src="assets/after-login-announcements.png" />Announcements</a>
       </li>
 
       <!-- Registration -->
@@ -57,8 +47,8 @@
           <img class="after-login-nav-icons" src="assets/after-login-bookings.png" />My Bookings
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Upcoming</a></li>
-          <li><a class="dropdown-item" href="#">Past</a></li>
+          <li><a class="dropdown-item" href="bookings.html">My Bookings</a></li>
+          <li><a class="dropdown-item" href="receipt.html">Receipts</a></li>
         </ul>
       </li>
     </nav>
@@ -74,16 +64,12 @@
         <li><a class="dropdown-item" href="#">Profile</a></li>
         <li><a class="dropdown-item" href="#">Settings</a></li>
         <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="bookings.html">My Bookings</a></li>
+        <li><a class="dropdown-item" href="announcements.html">Announcements</a></li>
+        <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="#">Logout</a></li>
       </ul>
     </div>
-
-    <!-- Hamburger for mobile -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
   </header>
 
   <!-- Mobile Menu (hidden by default) -->
@@ -116,7 +102,7 @@
         <button class="btn filter-outline flex-shrink-0" data-filter="donations">Donations</button>
     </div>   
       
-      <div class="table-responsive gallery-item" data-category="statement">
+      <div class="table-responsive gallery-item active" style="display: block;" data-category="statement">
         <table class="table booking-details-table align-middle">
           <thead>
             <tr class="heading">
@@ -187,7 +173,7 @@
         </table>
       </div>
 
-      <div class="table-responsive gallery-item hide" data-category="receipts">
+      <div class="table-responsive gallery-item hide" style="display: none;" data-category="receipts">
         <table class="table booking-details-table align-middle">
           <thead>
             <tr class="heading">
@@ -291,7 +277,7 @@
         </table>
       </div>
 
-      <div class="table-responsive gallery-item hide" data-category="donations">
+      <div class="table-responsive gallery-item hide" style="display: none;" data-category="donations">
         <table class="table booking-details-table align-middle">
           <thead>
             <tr class="heading">
