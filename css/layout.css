@@ -1,19 +1,9 @@
-@font-face { font-family: essai; src: url('essai.ttf'); }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* body {
-  background-color: #f5f5f5;
-  min-height: auto;
-  height: auto;
-  display: flex !important;
-  flex-direction: column !important;
-} */
-
+/** ----- Override Defaults Starts --------- **/
 html, body {
   height: 100%;
   margin: 0;
@@ -47,6 +37,33 @@ li {
   font-size: 26px;
   font-weight: 500;
   margin-bottom: 16px;
+}
+
+@media (min-width: 992px) {
+  .container, .container-lg, .container-md, .container-sm {
+    max-width: 98%;
+  }
+}
+@media (min-width: 768px) {
+  .container, .container-md, .container-sm {
+    max-width: 98%;
+  }
+}
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 98%;
+  }
+}
+
+/** ------- Override Default Ends ---------- **/
+
+@media (max-width: 767px) {
+  .index-page {
+    height: 150%;
+  }
+  .index-page section.hero {
+    height: 150vh;
+  }
 }
 
 .hero {

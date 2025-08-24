@@ -311,6 +311,54 @@
     border-color: var(--primary);
 }
 
+@media screen and (max-width: 1023px) {
+    .progress-wrapper {
+        width: 100%;
+        overflow-x: auto;      /* enable horizontal scroll */
+        overflow-y: hidden;    /* hide vertical scroll */
+        scrollbar-color: #ff9800 #f1f1f1; /* Firefox scrollbar */
+        scrollbar-width: thin;
+        margin-top: -26px;
+    }
+    
+    /* Webkit scrollbar (Chrome, Safari, Edge) */
+    .progress-wrapper::-webkit-scrollbar {
+        height: 8px; /* horizontal scrollbar height */
+    }
+    
+    .progress-wrapper::-webkit-scrollbar-track {
+        background: #f1f1f1;   /* light track */
+        border-radius: 4px;
+    }
+    
+    .progress-wrapper::-webkit-scrollbar-thumb {
+        background: linear-gradient(90deg, #ff9800, #ff5722);
+        border-radius: 4px;
+    }
+    
+    .progress-wrapper::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(90deg, #ff5722, #e91e63);
+    }
+    
+    .progress-tracker {
+        width: 160%; /* more than 100% */
+        min-width: 800px; /* ensures it always scrolls */
+    }
+      
+    .booking-details-table th {
+        font-size: 18px !important;
+    }
+
+    .booking-details-table tr, .booking-details-table td , .booking-details-table .btn{
+        font-size: 16px !important;
+    }
+
+    .booking-details-table .btn{
+        width: 154px;
+        height: 50px;
+    }
+}
+
 /** Documents CSS **/
 .your-uploads {
     background-color: var(--footer-color);
@@ -356,4 +404,18 @@
     height: 200px;
     padding: 40px !important;
     border-bottom: 16px solid var(--title-text-primary);
+}
+
+@media screen and (max-width: 1023px) {
+    .your-uploads {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .booking-details-table .btn {
+        width: 200px;
+        height: 50px;
+    }
 }

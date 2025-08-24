@@ -115,3 +115,10 @@
 .menu-toggle.active .bar:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
+
+/** --- For Tablet > 10 inch --- **/
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .after-login-nav a {
+        font-size: 18px !important;
+    }
+}

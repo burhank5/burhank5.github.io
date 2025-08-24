@@ -5,21 +5,23 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobileNav = document.getElementById('mobileNav'); // The mobile navigation container
   const navLinks = mobileNav.querySelectorAll('.nav-link, .login-button'); // All navigation links + login button
 
-  toggleBtn.addEventListener('click', () => {
-    toggleBtn.classList.toggle('active');         // Toggle hamburger-X
-    mobileNav.classList.toggle('show');           // Toggle mobile nav visibility
-
-    if (mobileNav.classList.contains('show')) {
-      navLinks.forEach((link, index) => {
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(-10px)';
-        setTimeout(() => {
-          link.style.opacity = '1';
-          link.style.transform = 'translateY(0)';
-        }, 100 * index);
-      });
-    }
-  });
+  if (toggleBtn && mobileNav) {
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.toggle('active');         // Toggle hamburger-X
+      mobileNav.classList.toggle('show');           // Toggle mobile nav visibility
+  
+      if (mobileNav.classList.contains('show')) {
+        navLinks.forEach((link, index) => {
+          link.style.opacity = '0';
+          link.style.transform = 'translateY(-10px)';
+          setTimeout(() => {
+            link.style.opacity = '1';
+            link.style.transform = 'translateY(0)';
+          }, 100 * index);
+        });
+      }
+    });
+  }
 
   //Gallery Toggle
   const buttons = document.querySelectorAll('[data-filter]');
@@ -60,24 +62,26 @@ document.addEventListener('DOMContentLoaded', function () {
   function previewImage(inputId, previewId) {
     const input = document.getElementById(inputId);
     const preview = document.getElementById(previewId);
-  
-    input.addEventListener("change", function () {
-      preview.innerHTML = ""; // clear old preview
-      if (this.files && this.files[0]) {
-        const file = this.files[0];
-        const reader = new FileReader();
-  
-        reader.onload = function (e) {
-          const img = document.createElement("img");
-          img.src = e.target.result;
-          img.classList.add("img-fluid", "mt-2", "rounded", "shadow");
-          img.style.maxHeight = "150px";
-          preview.appendChild(img);
-        };
-  
-        reader.readAsDataURL(file);
-      }
-    });
+
+    if (input && preview) {
+      input.addEventListener("change", function () {
+        preview.innerHTML = ""; // clear old preview
+        if (this.files && this.files[0]) {
+          const file = this.files[0];
+          const reader = new FileReader();
+    
+          reader.onload = function (e) {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.classList.add("img-fluid", "mt-2", "rounded", "shadow");
+            img.style.maxHeight = "150px";
+            preview.appendChild(img);
+          };
+    
+          reader.readAsDataURL(file);
+        }
+      });
+    }
   }
   
   // Apply preview function to all inputs
