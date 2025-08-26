@@ -66,6 +66,13 @@ li {
   }
 }
 
+.index-page {
+  height: 120%;
+}
+.index-page section.hero {
+  height: 150vh;
+}
+
 .hero {
   background: url('../assets/mosque-bg.png') center/cover no-repeat;
   height: 100vh;

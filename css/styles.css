@@ -411,6 +411,13 @@
         margin-left: -20px;
         margin-right: -20px;
     }
+    .table-hint {
+        font-family: ElMessiri;
+        font-size: 14px;
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 5px;
+    }  
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
@@ -418,4 +425,10 @@
         width: 200px;
         height: 50px;
     }
+}
+
+@media screen and (min-width: 1366px) {
+    .table-hint {
+        display: none;
+    }  
 }
