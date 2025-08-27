@@ -86,6 +86,20 @@
     .after-login-nav {
         display: none !important;
     }
+    .avatar-profile {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+    }
+    .avatar-profile img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .menu-toggle-after-login {
+        position: absolute;
+        right: 24px;
+        top: 68px;
+    }
 }
 
 .mobile-menu a,

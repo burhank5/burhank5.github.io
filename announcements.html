@@ -68,18 +68,22 @@
       </ul>
     </div>
 
+    <!-- Hamburger for mobile -->
+    <button class="menu-toggle menu-toggle-after-login" id="menuToggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
   </header>
 
   <!-- Mobile Menu (hidden by default) -->
   <div class="mobile-menu px-3 py-2" id="mobileNav">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about-us-1.html" class="nav-link">About Us</a>
-    <a href="services.html" class="nav-link">Services</a>
-    <a href="gallery.html" class="nav-link">Gallery</a>
-    <a href="testimonials.html" class="nav-link">Testimonial</a>
-    <a href="destination.html" class="nav-link active">Destination</a>
-    <a href="contact.html" class="nav-link">Contact Us</a>
-    <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png" height="20"></a>
+    <a href="destination.html" class="nav-link">Destination</a>
+    <a href="announcements.html" class="nav-link">Announcements</a>
+    <a href="#" class="nav-link">Registration</a>
+    <a href="bookings.html" class="nav-link">My Bookings</a>
+    <a href="receipt.html" class="nav-link">Receipts</a>
   </div>
 
   <!-- BREADCRUMB -->
@@ -90,27 +94,25 @@
     </div>
   </section>
 
-  <!-- Destination Cards -->
+  <!-- Announcement Cards -->
   <section class="py-5" style="background: url('assets/about-pattern-bg.png') repeat center; ">
     <div class="container px-4">
       <div class="row g-4">
     
-        <!-- Gallery Item -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="card destination-card announcement-card h-100 shadow-sm border-0">
             <div class="card-body bg-light-subtle p-3">
               <h3 class="card-title fw-semibold">Airport Instructions</h3>
-              <a href="destination-about-iraq.html" class="btn btn-warning btn-sm rounded-pill mt-2">Read More <span>↗</span></a>
+              <a href="destination-about-iraq.html" class="btn btn-warning btn-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#airportModal">Read More <span>↗</span></a>
             </div>
           </div>
         </div>
     
-        <!-- Repeat for other countries -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="card destination-card announcement-card h-100 shadow-sm border-0">
             <div class="card-body bg-light-subtle p-3">
               <h3 class="card-title fw-semibold">Medical & health Instructions</h3>
-              <a href="#" class="btn btn-warning btn-sm rounded-pill mt-2">Read More <span>↗</span></a>
+              <a href="#" class="btn btn-warning btn-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#medicalModal">Read More <span>↗</span></a>
             </div>
           </div>
         </div>
@@ -119,12 +121,11 @@
           <div class="card destination-card announcement-card h-100 shadow-sm border-0">
             <div class="card-body bg-light-subtle p-3">
               <h3 class="card-title fw-semibold">Accomodation Instructions</h3>
-              <a href="#" class="btn btn-warning btn-sm rounded-pill mt-2">Read More <span>↗</span></a>
+              <a href="#" class="btn btn-warning btn-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#accommodationModal">Read More <span>↗</span></a>
             </div>
           </div>
         </div>
     
-        <!-- Add remaining countries in same structure -->
         <div class="col-12 col-sm-6 col-lg-4 mx-auto">
           <div class="card destination-card announcement-card h-100 shadow-sm border-0">
             <div class="card-body bg-light-subtle p-3">
@@ -137,6 +138,98 @@
       </div>
     </div>
   </section>
+
+    <!-- ====== Aiport Info Modal ====== -->
+    <div class="modal fade" id="airportModal" tabindex="-1" aria-labelledby="airportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+            <h5 class="modal-title" id="airportModalLabel">Airport Instructions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    
+            <ul>
+                <li> Sagla Zaireen Kiraam potani flight na 4 kallaq pehle Airport pochi jaay.</li>
+                <li> Airport par Zaireen Kiraam ne Fayze Husayni Mumbai taraf si snacks box aapwa ma aawse.</li>
+                <li><b>Luggage check in karawana waqat ma aa cheezo nu khayal raakhe:</b>
+                <ul>
+                    <li>A. Laptop, mobile, power bank ni missal electronic items hand luggage ma raakhe.</li>
+                    <li>B. Cash, valuables ane essential medicines ne hand luggage ma raakhe.</li>
+                    <li>C. Ek jodi kapra hand luggage ma raakhe, jo kai amar bane ane luggage aawa ma delay thai to ye kaam laagi sake.</li>
+                    <li>D. Iron, nail cutter, scissors, liquid 100 ml na upar ane toiletries check in luggage ma raakhe.</li>
+                </ul>
+                </li>
+                <li> Agar airport par <b>wheelchair assistance</b> ni zarurat hoi to zaireen kiraam pehla si potana coordinator ne khabar kari de taake airlines ne khabar kari sakai. Wheelchair assistance waste alag charges aapwana rehse.</li>
+            </ul>
+    
+            <div class="alert alert-warning mt-3">
+                <span><b>Note:</b> Cairo airport ane Jedda airport par peewanu paani available nai hotu tesi khali paani ni bottle saathe raakhe ane Bombay si flight board karwa pehle paani bhari le.</span>
+            </div>
+    
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Medicine & Health Instructions Modal -->
+    <div class="modal fade" id="medicalModal" tabindex="-1" aria-labelledby="medicalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+            <h5 class="modal-title" id="medicalModalLabel">Medicine & Health Instructions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    
+            <ul>
+                <li> Je roz lewa ni dawa hoi ye jitna din ni safar che ehna hisaabe pehla si saathe pack kari le, Karbala, Najaf ya Makkah ma ye specific dawa nabhi mile.</li>
+                <li> <b>Loose motion, shardi, bukhar, body pain, acidity, headache</b> ane ye missal ni bimari waste dawa saathe rakhwu.</li>
+                <li> <b>Influenza vaccine</b> lewu advisable che.</li>
+                <li> Electrol powder ane bhi saathe raakhi sakai che hydration waste.</li>
+            </ul>
+    
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Accommodation Instructions Modal -->
+    <div class="modal fade" id="accommodationModal" tabindex="-1" aria-labelledby="accommodationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+            <h5 class="modal-title" id="accommodationModalLabel">Accommodation Instructions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    
+            <h6>1. Karbala & Najaf (Faiz Accommodation)</h6>
+            <ul>
+                <li> Karbala ne Najaf bewe jagah Faiz ma 4 jan na rooms che. Tesi jo couple hase ya 3 jan hase to mardo bairo ne alag alag rehwa nu nizam che.</li>
+                <li> Mehramdar na hoi group ma to mardo bairo alag alag rooms ma rahe.</li>
+                <li> Najaf ma Faiz ni 3 building che (Burhani, Saifee & Badri). Ye teeme ma si jem availability hase emm allocate karwa ma aawse.</li>
+            </ul>
+    
+            <h6 class="mt-3">2. Karbala & Najaf (Hotel Accommodation)</h6>
+            <ul>
+                <li> Hotel ma 2 jan ane 3 jan na rooms available hoi che.</li>
+                <li> Zaireen aa cheez ni nondh le ke Karbala ane Najaf ma hotels normal category ni che.</li>
+            </ul>
+    
+            <h6 class="mt-3">3. Makkah & Madina (Accommodation)</h6>
+            <ul>
+                <li> Makkah ane Madina ma Faize Hashemi zaireen kiraam waste utara nu arrangements kare che.</li>
+                <li> Jem availability hase ye mutabiq ya to Faiz ma ya hotel ma accommodate karwa ma aawse.</li>
+            </ul>
+    
+            </div>
+        </div>
+        </div>
+    </div>
+    
+  
+  
   
 
   <!-- FOOTER -->
@@ -144,6 +237,7 @@
     <div class="container py-4 border-bottom border-secondary text-white">
       <div class="row align-items-center">
         <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+            <img src="assets/fayz-logo.png" alt="Footer Logo" class="footer-logo img-fluid">
         </div>
         <div class="col-md-8 text-center">
           <p class="footer-title"><strong>Fayz-E-Husayni Trust, <span>Bombay</span></strong></p>
