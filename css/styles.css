@@ -432,3 +432,118 @@
         display: none;
     }  
 }
+
+/** Qardan Hasana Edit Form CSS Starts Here **/
+.user-details-left {
+    border-radius: 20px;
+}
+
+.qardan-details h5, .qardan-details p {
+    color: var(--secondary);
+}
+
+.qardan-details label {
+    font-size: 20px;
+}
+
+.qardan-details button[type="submit"] {
+    width: 22%;
+    margin: 0 auto;
+    background-color: var(--title-text-primary);
+    color: var(--secondary);
+    border-radius: 50px;
+}
+
+.user-details-left {
+    background: linear-gradient(149.13deg, #0E4653 40.11%, #31ACC8 99.47%);
+}
+
+.left-sidebar-vectors {
+    width: 36px;
+    height: 24px;
+}
+
+.text-start h5 {
+    display: flex;
+}
+
+.profile-details-split { 
+    position: relative; 
+}
+
+/* The vertical line with soft fade at top & bottom */
+.golden-separator {
+    width: 100%;
+    height: 2px;
+    margin: 1.5rem 0;
+    background: radial-gradient(50% 50% at 50% 50%, #E9E6D7 0%, rgba(240, 152, 37, 0) 100%);
+}
+
+.blue-separator {
+    width: 100%;
+    height: 2px;
+    margin: 1.5rem 0;
+    background: radial-gradient(50% 50% at 50% 50%, #0E4653 0%, rgba(14, 70, 83, 0.02) 100%);
+}
+
+.right-col .card {
+    background-color: var(--secondary);
+    border-radius: 20px;
+}
+
+.right-col input::placeholder, .right-col textarea::placeholder {
+    color: var(--white) !important;
+}
+
+.right-col h4, .right-col label {
+    color: var(--title-text-primary);
+}
+
+.right-col input {
+    color: var(--white);
+    background-color: var(--title-text-primary);
+    padding: 2%;
+    border: 1.5px solid var(--primary);
+    border-radius: 10px;
+}
+
+.right-col textarea {
+    color: var(--white);
+    background-color: var(--title-text-primary);
+    width: 100%;
+    border-radius: 10px;
+    padding: 2%;
+    border: 1.5px solid var(--primary);
+} 
+
+.right-col .text-danger {
+    color: var(--primary) !important;
+}
+
+.right-col input.form-check-input {
+    padding: 1%;
+}
+
+.cord-details {
+    padding: 3%;
+    text-align: center;
+    background-color: var(--title-text-primary);
+    border: 1.5px solid var(--primary);
+    border-radius: 10px;
+}
+
+.qardan-details-dahsboard select {
+    width: 100%;
+    padding: 1%;
+    background-color: var(--title-text-primary);
+    border: 1.5px solid var(--primary);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: ElMessiri;
+}
+
+.add-its-panel input, .add-its-panel select {
+    height: 42px;
+}
+
+/** Qardan Hasana Edit Form CSS Starts Here **/

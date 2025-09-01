@@ -1,4 +1,9 @@
 
+//always import jquery
+// var script = document.createElement('script');
+// script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'; // Check https://jquery.com/ for the current version
+// document.getElementsByTagName('head')[0].appendChild(script);
+
 // menu.js
 document.addEventListener('DOMContentLoaded', function () {
   const toggleBtn = document.getElementById('menuToggle');  // The hamburger menu button
