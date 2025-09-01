@@ -438,7 +438,7 @@
     border-radius: 20px;
 }
 
-.qardan-details h5, .qardan-details p {
+.qardan-details h5, .qardan-details p, .qardan-details-dahsboard h5, .qardan-details-dahsboard p {
     color: var(--secondary);
 }
 
@@ -446,12 +446,16 @@
     font-size: 20px;
 }
 
-.qardan-details button[type="submit"] {
-    width: 22%;
+.qardan-details button[type="submit"], .qardan-details-dahsboard button[type="submit"] {
+    width: 220px;
     margin: 0 auto;
     background-color: var(--title-text-primary);
     color: var(--secondary);
     border-radius: 50px;
+}
+
+.qardan-details-dahsboard  button.btn.btn-success.btn-qardan-save {
+    background-color: var(--primary);
 }
 
 .user-details-left {
@@ -544,6 +548,15 @@
 
 .add-its-panel input, .add-its-panel select {
     height: 42px;
+}
+
+.qardan-details-dahsboard .progress-tracker {
+    margin-top: unset !important;
+}
+
+.qardan-details-dahsboard .progress-wrapper {
+    background-color: var(--secondary);
+    border-radius: 12px;
 }
 
 /** Qardan Hasana Edit Form CSS Starts Here **/
