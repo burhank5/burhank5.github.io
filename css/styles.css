@@ -454,6 +454,36 @@
     border-radius: 50px;
 }
 
+.btn-color-secondary {
+    background-color: var(--title-text-primary);
+    color: var(--secondary);
+}
+
+.btn-clear {
+    width: 220px;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-deny {
+    width: 220px;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.btn-edit-form {
+    width: 220px;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: var(--button-secondary);
+    color: var(--secondary);
+}
+
 .qardan-details-dahsboard  button.btn.btn-success.btn-qardan-save {
     background-color: var(--primary);
 }
@@ -557,6 +587,10 @@
 .qardan-details-dahsboard .progress-wrapper {
     background-color: var(--secondary);
     border-radius: 12px;
+}
+
+.upload-instructions>li {
+    padding-left: 10px;
 }
 
 /** Qardan Hasana Edit Form CSS Starts Here **/
