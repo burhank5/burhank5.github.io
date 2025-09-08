@@ -19,3 +19,48 @@
     font-family: ElMessiri;
     font-size: 20px;
 }
+
+/**  Button Custom Utilities **/
+.btn-save:hover{
+  color: var(--primary);
+  border-color: var(--primary);
+  background-color: var(--secondary);
+}
+
+.qardan-details button[type="submit"]:hover, .qardan-details-dahsboard button[type="submit"]:hover  {
+  background-color: var(--secondary);
+  color: var(--title-text-primary);
+  border-color: var(--title-text-primary);
+}
+
+.btn-clear:hover {
+  color: var(--title-text-primary);
+  border-color: var(--title-text-primary);
+}
+
+.btn-deny:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-edit-form:hover {
+  background-color: var(--secondary);
+  color: var(--button-secondary);
+  border-color: var(--button-secondary);
+}
+
+.btn-success:hover {
+  background-color: var(--secondary) !important;
+  color: var(--title-text-primary) !important;
+  border-color: var(--title-text-primary) !important;
+
+}
+
+.btn-cw-200 {
+  width: 200px !important;
+}
+
+.btn-cw-150 {
+  width: 150px !important;
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haj Registration - Fayz-E-Husayni Trust</title>
+  <link rel="icon" type="image/x-icon" href="assets/faveicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script/script.js" ></script>
+</head>
+<body>  
+  <!-- HEADER -->
+  <header class="top-nav d-flex justify-content-between align-items-center p-3">
+    <a href="index.html" class="logo">
+      <img src="assets/fayz-logo.png" alt="Logo" class="img-fluid">
+    </a>
+    <nav class="navigation d-flex gap-3 align-items-center">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about-us-1.html" class="nav-link">About Us</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="testimonials.html" class="nav-link">Testimonial</a>
+      <a href="destination.html" class="nav-link">Destination</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png"></a>
+    </nav>
+
+    <!-- Hamburger for mobile -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu px-3 py-2" id="mobileNav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about-us-1.html" class="nav-link">About Us</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="testimonials.html" class="nav-link">Testimonial</a>
+    <a href="destination.html" class="nav-link">Destination</a>
+    <a href="contact.html" class="nav-link">Contact Us</a>
+    <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png" height="20"></a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <section class="breadcrumb-section py-4 px-3 text-white" style="background: linear-gradient(to right, #0e5b6d, #178aa3);">
+    <div class="container">
+      <h1 class="mb-1">Haj Registration</h1>
+      <p><a href="index.html" class="text-warning text-decoration-none">Dashboard</a> → Haj Registration</p>
+    </div>
+  </section>
+
+  <!-- Instructions-->
+  <section class="haj-registration-details text-center py-5" style="background: url('assets/about-pattern-bg.png') repeat center; ">
+    <div class="container">
+
+      <!-- Your Details -->
+      <h1>Your Details</h1>
+      <img src="assets/below-about.png" class="img-fluid" alt="decorative" width="40%" style="text-align: center; margin: 0 auto;">
+
+      <div class="profile-card row align-items-center text-white mb-4 mt-5">
+        <div class="col-md-3 text-center mb-3 section-left">
+          <img src="assets/qardan-details-profile-female.png" alt="Profile Image" class="rounded-circle mx-auto mb-3" style="width:180px; height:180px; object-fit:cover;">
+          <h4 class="mt-2 mb-2 w-100">Nafisa bai Firoz bhai Ratlamwala</h4>
+          <h4 style="color: var(--primary)">30359759</h4>
+        </div>
+        <div class="col-md-9 section-right">
+          <div class="container my-4">
+            <div class="row">
+          
+              <!-- Left Column -->
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <img src="assets/haj-email.png" class="me-3">
+                  <h3 class="text-warning ">Email:</h3>
+                </div>
+                <h3 class="text-start mb-5">rhussain5153@gmail.com</h3>
+          
+                <div class="mt-4 d-flex align-items-start">
+                  <img src="assets/haj-coordinator-code.png" class="me-3">
+                  <h3 class="text-warning ">Coordinator Code:</h3>
+                </div>
+                <h3 class="text-start mb-5">MHB10</h3>
+          
+                <div class="mt-4 d-flex align-items-start">
+                  <img src="assets/haj-coordinator-email.png" class="me-3">
+                  <h3 class="text-warning ">Coordinator Email:</h3>
+                </div>
+                <h3 class="text-start mb-5">fatema2153@gmail.com</h3>
+              </div>
+          
+              <!-- Right Column -->
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <img src="assets/haj-mobile.png" class="me-3">
+                  <h3 class="text-warning ">Mobile:</h3>
+                </div>
+                <h3 class="text-start mb-5">+918898674148</h3>
+          
+                <div class="mt-4 d-flex align-items-start">
+                  <img src="assets/haj-coordinator-name.png" class="me-3">
+                  <h3 class="text-warning ">Coordinator Name:</h3>
+                </div>
+                <h3 class="text-start mb-5">FATEMA BAI ABBAS BHAI UDAIPUR WALA</h3>
+          
+                <div class="mt-4 d-flex align-items-start">
+                  <img src="assets/haj-coordinator-mobile.png" class="me-3">
+                  <h3 class="text-warning ">Coordinator Mobile:</h3>
+                </div>
+                <h3 class="text-start mb-5">+918847128746</h3>
+              </div>
+          
+            </div>
+          </div>         
+        </div>
+      </div>
+    
+      <!-- Registration Details -->
+      <h1 class="mt-5">Your Registration Details</h1>
+      <img src="assets/below-about.png" class="img-fluid" alt="decorative" width="40%" style="text-align: center; margin: 0 auto;">
+
+      <div class="p-lg-5 p-sm-2 mb-4 mt-5 registration-details-section">
+        <div class="row text-start mb-3">
+          <div class="col-md-8">
+            <div class="fh-no ms-2 mb-1"><h4>FH No: <b>1425973</b></h4></div>
+            <button class="btn btn-save btn-sm ms-2">Add ITS No</button>
+          </div>
+          <div class="col-md-4 text-md-end mt-2 mt-md-0">
+            <div class="fh-no ms-2 mb-1 text-start"><h4>Requested Deparure City:</h4></div>
+            <select class="form-select d-inline-block" name="123" id="123">
+              <option value="select">Select</option>
+              <option value="select">Mumbai</option>
+              <option value="select">Surat</option>
+            </select>
+            <button class="btn btn-edit-form ms-2">Update</button>
+          </div>
+        </div>
+
+        <div class="table-responsive mt-5 mb-5">
+          <table class="table booking-details-table align-middle">
+            <thead>
+              <tr class="heading">
+                <th>Add ITS No (Member details)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="container my-3">
+                    <div class="row justify-content-center">
+                      <div class="col-md-8">
+                        <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                          
+                          <!-- Input -->
+                          <input type="text" class="form-control w-auto" placeholder="Enter ITS No.">
+                          
+                          <!-- Add ITS No Button -->
+                          <button type="button" class="btn btn-save">Add ITS No</button>
+                          
+                          <!-- Cancel Button -->
+                          <button type="button" class="btn btn-outline-dark rounded-5 btn-cw-150">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="table-responsive">
+          <table class="table booking-details-table align-middle">
+            <thead>
+              <tr class="heading">
+                <th>FH No.</th>
+                <th>Photo</th>
+                <th>ITS No.</th>
+                <th>Name</th>
+                <th>Accommodation</th>
+                <th>Deposit Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1425891</td>
+                <td><img src="assets/qardan-details-profile-female.png" width="100"></td>
+                <td>30359759</td>
+                <td>Husain bhai Firoz bhai Ratlamwala</td>
+                <td>PENDING</td>
+                <td>0</td>
+                <td><button class="btn btn-save btn-sm">Pay Now</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+      <!-- Hadiya Details -->
+      <h1 class="mt-5">Your Hadiya Details</h1>
+      <img src="assets/below-about.png" class="img-fluid" alt="decorative" width="40%" style="text-align: center; margin: 0 auto;">
+
+      <div class="row g-3 mt-5">
+        <div class="col-md-4">
+          
+          <img src="assets/hadiya1.jpg" class="img-fluid rounded-3" alt="Hadiya">
+          
+        </div>
+        <div class="col-md-4">
+          
+          <img src="assets/hadiya2.jpg" class="img-fluid rounded-3" alt="Hadiya">
+          
+        </div>
+        <div class="col-md-4">
+          
+          <img src="assets/hadiya3.jpg" class="img-fluid rounded-3" alt="Hadiya">
+          
+        </div>
+      </div>
+      <div class="row g-3 justify-content-center mt-2">
+        <div class="col-md-4">
+          
+          <img src="assets/hadiya4.jpg" class="img-fluid rounded-3" alt="Hadiya">
+          
+        </div>
+        <div class="col-md-4">
+          
+          <img src="assets/hadiya5.jpg" class="img-fluid rounded-3" alt="Hadiya">
+          
+        </div>
+      </div>
+
+      <div class="table-responsive mt-5 registered-details">
+        <table class="table booking-details-table align-middle">
+          <thead>
+            <tr class="heading">
+              <th>ITS No.</th>
+              <th>Photo</th>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30359759</td>
+              <td><img src="assets/qardan-details-profile-female.png" width="100"></td>
+              <td>Husain bhai Firoz bhai Ratlamwala</td>
+              <td>
+                <div class="d-flex text-center justify-content-center">
+                  <select class="form-select w-auto" name="123" id="123">
+                    <option value="select">Select Rida Size</option>
+                    <option value="select">M</option>
+                    <option value="select">S</option>
+                  </select>
+                  <button class="btn btn-save ms-2">Add Rida Size</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <!-- Passport Details -->
+      <h1 class="mt-5">Your Passport Details</h1>
+      <img src="assets/below-about.png" class="img-fluid" alt="decorative" width="40%" style="text-align: center; margin: 0 auto;">
+
+      <div class="card p-lg-5 p-sm-2 mb-5 mt-5 passport-details-section">
+        <div class="table-responsive">
+          <table class="table booking-details-table align-middle">
+            <thead>
+              <tr class="heading">
+                <th>Sr No.</th>
+                <th>Photo</th>
+                <th>ITS No.</th>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><img src="assets/qardan-details-profile-female.png" width="100"></td>
+                <td>30359759</td>
+                <td>Husain bhai Firoz bhai Ratlamwala</td>
+                <td><button class="btn btn-save btn-sm btn-cw-200">Add Passport Details</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container py-4 border-bottom border-secondary text-white">
+      <div class="row align-items-center">
+        <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+          <img src="assets/fayz-logo.png" alt="Footer Logo" class="footer-logo img-fluid">
+        </div>
+        <div class="col-md-8 text-center">
+          <p class="footer-title"><strong>Fayz-E-Husayni Trust, <span>Bombay</span></strong></p>
+          <p class="footer-subtitle"><span>140+ Years</span> In The Khidmat <br />Of Hujjaj & Zaereen Kiraam</p>
+        </div>
+        <div class="col-md-2 text-center text-md-end">
+          <p>Follow Us On:</p>
+          <a href="#"><img src="assets/instagram.png" alt="Instagram" class="social-icon"></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-3 copyright">
+      <p class="mb-0 text-decoration-none"><span style="color:var(--primary)">&copy; </span> <a href="#" class="text-decoration-none">Fayz-E-Husayni Trust</a>. All Rights Reserved</p>
+    </div>
+    <div class="post-footer">
+        <!-- <img src="assets/footer-symbol.png" /> -->
+    </div>
+  </footer>
+</body>
+</html>

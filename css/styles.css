@@ -525,7 +525,7 @@
     border-radius: 20px;
 }
 
-.right-col input::placeholder, .right-col textarea::placeholder {
+.right-col input::placeholder, .right-col textarea::placeholder, .registration-details-section input::placeholder {
     color: var(--white) !important;
 }
 
@@ -593,4 +593,124 @@
     padding-left: 10px;
 }
 
-/** Qardan Hasana Edit Form CSS Starts Here **/
+/** Qardan Hasana Edit Form CSS Ends Here **/
+
+/** Haj Registration CSS **/
+.haj-registration-details .section-left {
+    position: relative;
+    padding: 20px;
+}
+  
+.haj-registration-details .section-left::after {
+    content: "";
+    position: absolute;
+    top: -22%;              /* start fade */
+    bottom: 0;           /* end fade */
+    right: 0;
+    width: 1px;
+    background: radial-gradient(50% 50% at 50% 50%, #E9E6D7 0%, rgba(240, 152, 37, 0) 100%);
+    height: 480px;
+}
+
+.haj-registration-details h1 {
+    color: var(--title-text-primary);
+}
+
+.registration-details-section, .passport-details-section {
+    background-color: var(--secondary);
+    border-radius: 30px;
+}
+
+.btn-save {
+    background-color: var(--primary);
+    color: var(--secondary);
+    width: 160px;
+    border-radius: 50px;
+}
+
+.registration-details-section .booking-details-table td, .passport-details-section .booking-details-table td {
+    background-color: var(--tertiary);
+}
+
+.registration-details-section select, .registered-details select {
+    width: 50%;
+    height: 50px;
+    background-color: var(--title-text-primary);
+    border: 1.5px solid var(--primary);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: ElMessiri;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='white' d='M7.247 11.14l-4.796-5.481c-.566-.647-.106-1.659.753-1.659h9.592c.86 0 1.319 1.012.753 1.659l-4.796 5.48c-.406.46-1.1.46-1.506 0z'/%3e%3c/svg%3e"); 
+}
+
+.profile-card {
+    background: linear-gradient(90deg, #07485f, #1ca6c9);
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+}
+.custom-table th {
+    background-color: #07485f;
+    color: #fff;
+}
+.hadiya-img {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+}
+
+.registration-details-section input {
+    color: var(--white);
+    background-color: var(--title-text-primary);
+    padding: 1%;
+    border: 1.5px solid var(--primary);
+    border-radius: 10px;
+}
+
+.haj-registration-details .btn-success {
+    width: 220px;
+    margin: 0 auto;
+    background-color: var(--title-text-primary);
+    color: var(--secondary);
+    border-radius: 50px;
+}
+
+.haj-instructions-content>h3, .haj-instructions-content>h2 {
+    color: var(--title-text-primary);
+}
+
+.haj-instructions-content>h4 {
+    color: var(--title-text-primary);
+    line-height: 55px;
+}
+
+.haj-instructions-content>span {
+    margin-left: 28px;
+    font-size: 22px;
+}
+
+.haj-instructions-content label.form-check-label {
+    color: var(--title-text-primary);
+    font-size: 20px;
+}
+
+.haj-instructions-content h4::before {
+    content: url("../assets/li-pattern.png");
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-size: 24px;
+}
+
+.haj-instructions-content .booking-details-table td {
+    padding: 3%;
+}
+/** Haj Registration CSS Ends **/

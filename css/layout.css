@@ -22,7 +22,7 @@ section.breadcrumb-section {
   flex: unset !important;
 }
 
-p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span, label, textarea  {
+p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span, label, text  {
   font-family: ElMessiri;
 }
 
