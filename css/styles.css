@@ -647,7 +647,7 @@
 }
 
 .registration-details-section select, .registered-details select {
-    width: 58%;
+    width: 52%;
     height: 50px;
     background-color: var(--title-text-primary);
     border: 1.5px solid var(--primary);
