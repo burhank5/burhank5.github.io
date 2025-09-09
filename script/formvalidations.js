@@ -83,3 +83,67 @@ if(qardanEditForm) {
     }
   });
 }
+
+//Qardan Form Edit Details validation
+const qardanForm = document.getElementById("qardanDetails");
+if(qardanForm) {
+  qardanForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    // Get values
+    let fhid = document.getElementById("fhid").value.trim();
+    let amount = document.getElementById("amount").value.trim();
+    let tenure = document.getElementById("tenure").value.trim();
+    let address = document.getElementById("address").value.trim();
+
+    // Reset errors
+    document.querySelectorAll(".text-danger[id]").forEach(el => el.textContent = "");
+
+    // Amount Validation
+    if (fhid === "") {
+      document.getElementById("fhidError").textContent = "fhid is required";
+      valid = false;
+    }
+
+    // Amount Validation
+    if (amount === "") {
+      document.getElementById("amountError").textContent = "Amount is required";
+      valid = false;
+    } else if (parseInt(amount) > 300000) {
+      document.getElementById("amountError").textContent = "Amount must not exceed 300000";
+      valid = false;
+    }
+
+    // Tenure Validation
+    if (tenure === "") {
+      document.getElementById("tenureError").textContent = "Tenure is required";
+      valid = false;
+    } else if (parseInt(tenure) > 6) {
+      document.getElementById("tenureError").textContent = "Tenure must not exceed 6";
+      valid = false;
+    }
+
+    // Address Validation
+    if (address === "") {
+      document.getElementById("addressError").textContent = "Address is required";
+      valid = false;
+    }
+
+    // --- Disclaimer Validation ---
+    const disclaimerCheck = document.getElementById("disclaimerCheck");
+    const disclaimerError = document.getElementById("disclaimerError");
+
+    if (!disclaimerCheck.checked) {
+        disclaimerError.textContent = "You must accept the disclaimer before continuing.";
+        valid = false;
+    } else {
+        disclaimerError.textContent = "";
+    }
+
+    if (valid) {
+      alert("Form submitted successfully!");
+      // Here you can send data via AJAX
+    }
+  });
+}

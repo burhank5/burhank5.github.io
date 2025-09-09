@@ -16,23 +16,23 @@
     <a href="index.html" class="logo">
       <img src="assets/fayz-logo.png" alt="Logo" class="img-fluid">
     </a>
-    <nav class="navigation d-flex gap-3 align-items-center">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about-us-1.html" class="nav-link">About Us</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="gallery.html" class="nav-link">Gallery</a>
-      <a href="testimonials.html" class="nav-link">Testimonial</a>
-      <a href="destination.html" class="nav-link">Destination</a>
-      <a href="contact.html" class="nav-link">Contact Us</a>
-      <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png"></a>
-    </nav>
 
-    <!-- Hamburger for mobile -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
+    <!-- Avatar Right -->
+    <div class="haj-profile avatar-profile dropdown">
+      <img src="assets/login-profile-avatar.png" alt="Avatar" />
+      <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="ms-2">Taha</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="bookings.html">My Bookings</a></li>
+        <li><a class="dropdown-item" href="announcements.html">Announcements</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Logout</a></li>
+      </ul>
+    </div>
   </header>
 
   <!-- Mobile Menu (hidden by default) -->
@@ -58,8 +58,8 @@
   <!-- Instructions-->
   <section class="haj-registration-details text-center py-5" style="background: url('assets/about-pattern-bg.png') repeat center; ">
     <div class="container">
-
-      <div class="table-responsive mt-5 registered-details">
+      <div class="table-hint mt-5">← Swipe to see more →</div>
+      <div class="table-responsive registered-details">
         <table class="table booking-details-table">
           <thead>
             <tr class="heading">

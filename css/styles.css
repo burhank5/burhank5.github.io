@@ -493,7 +493,7 @@
 }
 
 .left-sidebar-vectors {
-    width: 36px;
+    width: 24px;
     height: 24px;
 }
 
@@ -586,30 +586,44 @@
 
 .qardan-details-dahsboard .progress-wrapper {
     background-color: var(--secondary);
-    border-radius: 12px;
 }
 
 .upload-instructions>li {
     padding-left: 10px;
 }
 
+.application-status-top, .pattern-div, .qardan-edit-section {
+    background-color: var(--secondary);
+}
+
+.application-status-top {
+    margin-bottom: unset !important;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.qardan-edit-section {
+    margin-top: -24px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+@media screen and (max-width: 1023px) {
+    .qardan-details-dahsboard .progress-wrapper {
+        margin-top: -2px;
+    }
+
+    .qardan-details-dahsboard .btn-clear {
+        margin-top: 20px;
+    }
+
+}
 /** Qardan Hasana Edit Form CSS Ends Here **/
 
 /** Haj Registration CSS **/
 .haj-registration-details .section-left {
     position: relative;
     padding: 20px;
-}
-  
-.haj-registration-details .section-left::after {
-    content: "";
-    position: absolute;
-    top: -22%;              /* start fade */
-    bottom: 0;           /* end fade */
-    right: 0;
-    width: 1px;
-    background: radial-gradient(50% 50% at 50% 50%, #E9E6D7 0%, rgba(240, 152, 37, 0) 100%);
-    height: 480px;
 }
 
 .haj-registration-details h1 {
@@ -633,7 +647,7 @@
 }
 
 .registration-details-section select, .registered-details select {
-    width: 50%;
+    width: 58%;
     height: 50px;
     background-color: var(--title-text-primary);
     border: 1.5px solid var(--primary);
@@ -712,5 +726,37 @@
 
 .haj-instructions-content .booking-details-table td {
     padding: 3%;
+}
+
+@media screen and (max-width: 1366px) {
+    .registration-details-section input {
+        height: 45px;
+        padding: 4%;
+    }
+    .registration-details-section, .passport-details-section {
+        padding: 20px;
+    }
+
+    .haj-profile.avatar-profile {
+        top: 22px !important;
+    }
+    .haj-profile.avatar-profile img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+      
+    .haj-registration-details .section-left::after {
+        content: "";
+        position: absolute;
+        top: -22%;              /* start fade */
+        bottom: 0;           /* end fade */
+        right: 0;
+        width: 1px;
+        background: radial-gradient(50% 50% at 50% 50%, #E9E6D7 0%, rgba(240, 152, 37, 0) 100%);
+        height: 480px;
+    }
 }
 /** Haj Registration CSS Ends **/
