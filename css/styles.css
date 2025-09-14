@@ -665,6 +665,36 @@ input#instructionsCheck {
     background-color: var(--tertiary);
 }
 
+.btn.add-its-fhno-btn {
+    background-color: var(--primary);
+    border-color: var(--title-text-primary);
+    color: var(--white);
+    border-radius: 50px;
+    width: 120px;
+}
+
+.btn.add-its-fhno-btn:hover {
+    background-color: var(--secondary);
+    border-color: var(--title-text-primary);
+    color: var(--title-text-primary);
+}
+
+.btn.edit-row, .btn.delete-row {
+    border-radius: 50px;
+    width: 80px;
+}
+
+#editModal .btn, #deleteModal .btn {
+    border-radius: 50px;
+}
+
+
+#editModal .modal-header {
+    background-color: var(--title-text-primary);
+    color: var(--secondary);
+}
+
+
 @media screen and (max-width: 1023px) {
     .qardan-details-dahsboard .progress-wrapper {
         margin-top: -2px;

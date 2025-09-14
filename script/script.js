@@ -159,17 +159,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  document.getElementById("prevBtn").addEventListener("click", () => {
+  let prevBtn = document.getElementById("prevBtn");
+  if(prevBtn) {
+    prevBtn.addEventListener("click", () => {
     const cardsPerView = getCardsPerView();
     startIndex = (startIndex - cardsPerView + cards.length) % cards.length;
     showCards(startIndex);
   });
+  }
 
-  document.getElementById("nextBtn").addEventListener("click", () => {
+  let nextBtn = document.getElementById("nextBtn");
+  if(nextBtn) {
+    nextBtn.addEventListener("click", () => {
     const cardsPerView = getCardsPerView();
     startIndex = (startIndex + cardsPerView) % cards.length;
     showCards(startIndex);
   });
+  }
 
   // Handle resizing to update card layout
   window.addEventListener("resize", () => {
