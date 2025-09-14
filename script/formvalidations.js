@@ -1,7 +1,8 @@
 //Qardan Form Edit Details validation
 const qardanEditForm = document.getElementById("qardanEditDetails");
 if(qardanEditForm) {
-  qardanEditForm.addEventListener("submit", function(e) {
+  document.querySelector(".btn-success").addEventListener("click", function(e) {
+    console.log('hiii');
     e.preventDefault();
     let valid = true;
 
@@ -130,20 +131,99 @@ if(qardanForm) {
       valid = false;
     }
 
+    // --- AutoDebit Validation ---
+    const autoDebitCheck = document.getElementById("autoDebitCheck");
+    const autoDebitError = document.getElementById("autoDebitError");
+
+    if (!autoDebitCheck.checked) {
+        autoDebitError.textContent = "You must accept the AutoDebit before continuing.";
+        valid = false;
+    } else {
+        autoDebitError.textContent = "";
+    }
+
     // --- Disclaimer Validation ---
     const disclaimerCheck = document.getElementById("disclaimerCheck");
     const disclaimerError = document.getElementById("disclaimerError");
 
     if (!disclaimerCheck.checked) {
-        disclaimerError.textContent = "You must accept the disclaimer before continuing.";
+        disclaimerError.textContent = "You must accept the Disclaimer before continuing.";
         valid = false;
     } else {
         disclaimerError.textContent = "";
     }
 
     if (valid) {
-      alert("Form submitted successfully!");
-      // Here you can send data via AJAX
+      // Show Bootstrap success modal
+      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+
+      // Optionally reset form
+      qardanForm.reset();
     }
   });
 }
+
+// const fhno_form = document.getElementById("add-its-fnho-form");
+// if(fhno_form) {
+//   document.querySelector(".btn-qardan-save").addEventListener("click", function(e) {
+//     console.log('clicked')
+//     e.preventDefault();
+
+//     let valid = true;
+
+//     // Get values
+//     let itsid = document.getElementById("itsid").value.trim();
+//     let tenure = document.getElementById("tenure").value.trim();
+//     let amount = document.getElementById("amount").value.trim();
+//     let relationship = document.getElementById("relationship").value.trim();
+
+//     if (itsid === "") {
+//       document.getElementById("itsidError").textContent = "ITS ID is required";
+//       valid = false;
+//     } else if(parseInt(itsid) > 8) {
+//       document.getElementById("itsidError").textContent = "ITS ID is incorrect";
+//       valid = false;
+//     }
+
+//     if (tenure === "") {
+//       document.getElementById("tenureError").textContent = "Tenure is required";
+//       valid = false;
+//     }
+
+//     if (amount === "") {
+//       document.getElementById("amountError").textContent = "Amount is required";
+//       valid = false;
+//     }
+
+//     if (relationship === "") {
+//       document.getElementById("relationshipError").textContent = "Relationship is required";
+//       valid = false;
+//     }
+
+//     if (valid) {
+//       // Show Bootstrap success modal
+//       const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+//       successModal.show();
+
+//       // Optionally reset form
+//       fhno_form.reset();
+//     }
+
+
+//   })
+// }
+
+document.querySelector(".add-its-fhno-btn").addEventListener("click", function() {
+  console.log('clicked')
+  // validate inner block fields
+  let itsid = document.getElementById("itsid").value.trim();
+  let tenure2 = document.getElementById("tenure2").value.trim();
+  let amount2 = document.getElementById("amount2").value.trim();
+
+  if (itsid === "" || tenure2 === "" || amount2 === "") {
+    alert("Please fill all ITS block fields");
+  } else {
+    alert("ITS block saved successfully!");
+  }
+});

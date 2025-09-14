@@ -22,7 +22,7 @@ section.breadcrumb-section {
   flex: unset !important;
 }
 
-p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span, label, text  {
+p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span, label, text, textarea, select  {
   font-family: ElMessiri;
 }
 
@@ -206,4 +206,11 @@ li {
   width: 60px;
   height: 60px;
   object-fit: cover;
+}
+
+/* Target all checkboxes */
+.form-check-input:checked {
+  accent-color: var(--primary) !important;
+  color: var(--primary) !important;
+  background-color: var(--primary) !important;
 }

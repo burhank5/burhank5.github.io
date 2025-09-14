@@ -101,7 +101,7 @@
             <button class="btn btn-color-secondary btn-sm rounded-pill p-2 me-2">
                 <i class="bi bi-question-circle-fill"></i> View FAQ
             </button>
-            <button class="btn btn-warning btn-sm rounded-pill p-2">
+            <button class="btn btn-warning btn-sm rounded-pill p-2" data-bs-toggle="modal" data-bs-target="#videoModal">
               <i class="bi bi-play-circle"></i> Video Tutorial
             </button>
         </div>
@@ -184,41 +184,64 @@
                             <!-- Vertical Separator -->
                             <div class="blue-separator"></div>
 
+                            <div class="table-responsive">
+                              <table class="table booking-details-table add-its-fhno align-middle">
+                                <thead>
+                                  <tr class="heading">
+                                    <th>SR</th>
+                                    <th>Flight Date</th>
+                                    <th>FLT_NO</th>
+                                    <th>Sector</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>31 Dec 2025</td>
+                                    <td>IA-442</td>
+                                    <td>BOM_NJF</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
                             <h2>Add ITS from FHNO</h2>
 
                             <div class="row add-its-panel">
-                              <div class="col-md-3">
-                                  <label class="form-label">ITS ID:</label>
-                                  <input type="number" class="form-control" placeholder="ITS ID" id="itsid">
-                                  <small class="text-danger" id="itsidError"></small>
-                              </div>
-  
-                              <div class="col-md-3">
-                                  <label class="form-label">Tenure:</label>
-                                  <input type="number" class="form-control" placeholder="Tenure" id="tenure">
-                                  <small class="text-danger" id="tenureError"></small>
-                              </div>
-  
-                              <div class="col-md-3">
-                                  <label class="form-label">Amount:</label>
-                                  <input type="number" class="form-control" placeholder="Amount" id="amount">
-                                  <small class="text-danger" id="amountError"></small>
-                              </div>
-  
-                              <div class="col-md-3">
-                                <label class="form-label">Relationship:</label>
-                                <select name="relationship" id="relationship">
-                                    <option value="name1">Name1</option>
-                                    <option value="name2">Name2</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
-                                <small class="text-danger" id="relationshipError"></small>
-                              </div>
+                              <!-- <form id="add-its-fnho-form"> -->
+                                <div class="col-md-3">
+                                    <label class="form-label">ITS ID:</label>
+                                    <input type="number" class="form-control" placeholder="ITS ID" id="itsid">
+                                    <small class="text-danger" id="itsidError"></small>
+                                </div>
+    
+                                <div class="col-md-3">
+                                    <label class="form-label">Tenure:</label>
+                                    <input type="number" class="form-control" placeholder="Tenure" id="tenure">
+                                    <small class="text-danger" id="tenureError"></small>
+                                </div>
+    
+                                <div class="col-md-3">
+                                    <label class="form-label">Amount:</label>
+                                    <input type="number" class="form-control" placeholder="Amount" id="amount">
+                                    <small class="text-danger" id="amountError"></small>
+                                </div>
+    
+                                <div class="col-md-3">
+                                  <label class="form-label">Relationship:</label>
+                                  <select name="relationship" id="relationship">
+                                      <option value="name1">Name1</option>
+                                      <option value="name2">Name2</option>
+                                      <option value="mercedes">Mercedes</option>
+                                      <option value="audi">Audi</option>
+                                  </select>
+                                  <small class="text-danger" id="relationshipError"></small>
+                                </div>
+                              <!-- </form> -->
 
                               <!-- Save Button -->
                               <div class="mt-4 text-center">
-                                  <button type="submit" class="btn btn-success btn-qardan-save">Save <i class="bi bi-arrow-up-right"></i></button>
+                                  <button class="btn add-its-fhno-btn">Save <i class="bi bi-arrow-up-right"></i></button>
                               </div>
                             </div>
                         </div>
@@ -231,6 +254,7 @@
                           <label class="form-check-label fs-5" for="autoDebitCheck">
                             I accept Auto Debit Facility for myself and/or registered members.
                           </label>
+                          <small class="text-danger" id="autoDebitError"></small>
                         </div>
 
                         <div class="form-check mt-3 d-flex align-items-start text-center">
@@ -239,6 +263,7 @@
                             I accept Disclaimer for myself and registered members. 
                             <a href="#">Disclaimer</a>
                           </label>
+                          <small class="text-danger" id="disclaimerError"></small>
                         </div>
             
                         <!-- Save Button -->
@@ -259,8 +284,8 @@
             <div class="step completed mt-3"><div class="circle"><i class="bi bi-check"></i></div><small>Applied</small></div>
             <div class="step completed mt-3"><div class="circle"><i class="bi bi-check"></i></div><small>In Progress</small></div>
             <div class="step active mt-3"><div class="circle"></div><small>Verified</small></div>
-            <div class="step mt-3"><div class="circle"></div><small>Approved</small></div>
-            <div class="step mt-3"><div class="circle"></div><small>Sanctioned</small></div>
+            <div class="step warning mt-3"><div class="circle"></div><small>Approved</small></div>
+            <div class="step warning mt-3"><div class="circle"></div><small>Sanctioned</small></div>
           </div>
         </div>
 
@@ -288,7 +313,7 @@
                 <th>FLT_NO</th>
                 <th>Sector</th>
                 <th>Departure_Time</th>
-                <th>Cancellatrion Reason</th>
+                <th>Cancellation Reason</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -308,7 +333,8 @@
                   </select>
                 </td>
                 <td>
-                  <button type="submit" class="btn btn-success btn-qardan-save">Upload Document</button>
+                  <button type="submit" class="btn btn-success btn-qardan-save" data-bs-toggle="modal" data-bs-target="#uploadDoc" style="width: 180px !important;">Upload Document</button>
+                  <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#uploadDocView" style="width: 180px !important;">View Document</button>
                 </td>
               </tr>
             </tbody>
@@ -316,6 +342,250 @@
         </div>
     </div>      
   </section>
+
+  <!-- Video Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+      <!-- Custom Close Button -->
+      <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+        <!-- Modal Header -->
+        <div class="modal-header border-0 text-center">
+          <h4 class="modal-title mx-auto fw-bold" id="videoModalLabel">Tutorial Video</h4>
+        </div>
+  
+        <!-- Modal Body -->
+        <div class="modal-body text-center">
+          <div class="ratio ratio-16x9 rounded-3">
+            <iframe id="videoFrame"
+            src="https://www.youtube.com/embed/Iv9MQj4ymJA" 
+            title="YouTube video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Doc Upload Modal -->
+  <div class="modal fade" id="uploadDoc" tabindex="-1" aria-labelledby="uploadDocLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        
+        <!-- Custom Close Button -->
+        <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+  
+        <!-- Modal Header -->
+        <div class="modal-header border-0 text-center">
+          <h4 class="modal-title mx-auto fw-bold" id="uploadDocLabel">Add Passport Details</h4>
+        </div>
+
+        <!-- Mumin Details -->
+        <div class="modal-mumin-info p-3 me-5 ms-5">
+          <h3>Mumin Details</h3>
+          <div class="golden-separator"></div>
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <img src="assets/qardan-details-profile.png">
+            </div>
+            <div class="col-md-9">
+              <h4 class="mt-4">Husain bhai Firoz bhai Ratlamwala</h4>
+              <br />
+              <h4><strong>303359759</strong></h4>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal Body with Form -->
+        <div class="modal-body p-3 me-5 ms-5 mt-5">
+          <h3>Passport Details</h3>
+          <div class="blue-separator"></div>
+          <form class="p-2">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="passportNo" class="form-label">Passport No:</label>
+                <input type="text" class="form-control" id="passportNo" placeholder="Z5784237">
+              </div>
+              <div class="col-md-6">
+                <label for="title" class="form-label">Title:</label>
+                <select class="form-select" id="title">
+                  <option selected>MR.</option>
+                  <option>MRS.</option>
+                  <option>MS.</option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="firstName" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="firstName" placeholder="AHMED">
+              </div>
+              <div class="col-md-4">
+                <label for="middleName" class="form-label">Middle Name:</label>
+                <input type="text" class="form-control" id="middleName" placeholder="YUSUF">
+              </div>
+              <div class="col-md-4">
+                <label for="lastName" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" placeholder="VAZIR">
+              </div>
+            </div>
+  
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="placeOfBirth" class="form-label">Place of Birth:</label>
+                <input type="text" class="form-control" id="placeOfBirth" placeholder="MUMBAI">
+              </div>
+              <div class="col-md-4">
+                <label for="gender" class="form-label">Gender:</label>
+                <select class="form-select" id="gender">
+                  <option selected>MALE</option>
+                  <option>FEMALE</option>
+                  <option>OTHER</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="placeOfIssue" class="form-label">Place of Issue:</label>
+                <input type="text" class="form-control" id="placeOfIssue" placeholder="MUMBAI">
+              </div>
+            </div>
+  
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-save">Submit</button>
+            </div>
+  
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Doc View Modal -->
+  <div class="modal fade" id="uploadDocView" tabindex="-1" aria-labelledby="uploadDocViewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        
+        <!-- Custom Close Button -->
+        <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+  
+        <!-- Modal Header -->
+        <div class="modal-header border-0 text-center">
+          <h4 class="modal-title mx-auto fw-bold" id="uploadDocViewLabel">View Passport Details</h4>
+        </div>
+
+        <!-- Mumin Details -->
+        <div class="modal-mumin-info p-3 me-5 ms-5">
+          <h3>Mumin Details</h3>
+          <div class="golden-separator"></div>
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <img src="assets/qardan-details-profile.png">
+            </div>
+            <div class="col-md-9">
+              <h4 class="mt-4">Husain bhai Firoz bhai Ratlamwala</h4>
+              <br />
+              <h4><strong>303359759</strong></h4>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal Body with Form -->
+        <div class="modal-body p-3 me-5 ms-5 mt-5">
+          <form>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="passportNo" class="form-label">Passport No:</label>
+                <input type="text" class="form-control" id="passportNo" placeholder="Z5784237" disabled>
+              </div>
+              <div class="col-md-6">
+                <label for="title" class="form-label">Title:</label>
+                <select class="form-select" id="title" disabled>
+                  <option selected>MR.</option>
+                  <option>MRS.</option>
+                  <option>MS.</option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="firstName" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="firstName" placeholder="AHMED" disabled>
+              </div>
+              <div class="col-md-4">
+                <label for="middleName" class="form-label">Middle Name:</label>
+                <input type="text" class="form-control" id="middleName" placeholder="YUSUF" disabled>
+              </div>
+              <div class="col-md-4">
+                <label for="lastName" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" placeholder="VAZIR" disabled>
+              </div>
+            </div>
+  
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="placeOfBirth" class="form-label">Place of Birth:</label>
+                <input type="text" class="form-control" id="placeOfBirth" placeholder="MUMBAI" disabled>
+              </div>
+              <div class="col-md-4">
+                <label for="gender" class="form-label">Gender:</label>
+                <select class="form-select" id="gender" disabled>
+                  <option selected>MALE</option>
+                  <option>FEMALE</option>
+                  <option>OTHER</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="placeOfIssue" class="form-label">Place of Issue:</label>
+                <input type="text" class="form-control" id="placeOfIssue" placeholder="MUMBAI" disabled>
+              </div>
+            </div>
+  
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <div class="modal-header border-0">
+          <img src="assets/form-submit-checkmark.png" style="margin: 0 auto;">
+        </div>
+        <div class="modal-body">
+          <h4>Thankyou For Submitting the Form</h4>
+          <h4>You Will be Contacted Soon</h4>
+        </div>
+        <div class="modal-footer border-0" style="margin: 0 auto;">
+          <button type="button" class="btn btn-save" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
 
   <!-- FOOTER -->
   <footer class="footer">

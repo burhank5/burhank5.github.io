@@ -261,19 +261,26 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 2px solid #0E4653;
+    border: 2px solid var(--title-text-primary);
     margin: 0 auto 8px;
-    background: #fff;
+    /* background: #fff; */
     position: relative;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    color: #0E4653;
+    color: var(--title-text-primary);
+}
+.progress-tracker .warning .circle {
+    background: url(../assets/warning-progress-tracker.png) no-repeat center center;
+    z-index: 2;
+    background-size: 60%;   /* adjust size */
+    background-color: #fff;
+    border: 2px solid var(--warning) !important;
 }
 .progress-tracker .step.completed .circle {
-    background: #0E4653;
+    background: var(--title-text-primary);
     color: #fff;
 }
 .progress-tracker .step.completed .circle i {
@@ -434,6 +441,10 @@
 }
 
 /** Qardan Hasana Edit Form CSS Starts Here **/
+.qardan-details h1, .qardan-details h2, .qardan-details h3, .qardan-details h4, .qardan-details h5, .qardan-details-dahsboard h1, .qardan-details-dahsboard h2, .qardan-details-dahsboard h3, .qardan-details-dahsboard h4, .qardan-details-dahsboard h5 {
+    color: var(--title-text-primary);
+}
+
 .user-details-left {
     border-radius: 20px;
 }
@@ -493,8 +504,8 @@
 }
 
 .left-sidebar-vectors {
-    width: 24px;
-    height: 24px;
+    width: auto;
+    height: auto;
 }
 
 .text-start h5 {
@@ -525,7 +536,7 @@
     border-radius: 20px;
 }
 
-.right-col input::placeholder, .right-col textarea::placeholder, .registration-details-section input::placeholder {
+.right-col input::placeholder, .right-col textarea::placeholder, .registration-details-section input::placeholder, #uploadDoc input::placeholder {
     color: var(--white) !important;
 }
 
@@ -533,7 +544,7 @@
     color: var(--title-text-primary);
 }
 
-.right-col input {
+.right-col input, #uploadDoc input, input#instructionsCheck {
     color: var(--white);
     background-color: var(--title-text-primary);
     padding: 2%;
@@ -541,7 +552,13 @@
     border-radius: 10px;
 }
 
-.right-col textarea {
+input#instructionsCheck {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.right-col textarea, #uploadDoc textarea {
     color: var(--white);
     background-color: var(--title-text-primary);
     width: 100%;
@@ -551,7 +568,7 @@
 } 
 
 .right-col .text-danger {
-    color: var(--primary) !important;
+    color: var(--warning) !important;
 }
 
 .right-col input.form-check-input {
@@ -566,7 +583,7 @@
     border-radius: 10px;
 }
 
-.qardan-details-dahsboard select {
+.qardan-details-dahsboard select, #uploadDoc select {
     width: 100%;
     padding: 1%;
     background-color: var(--title-text-primary);
@@ -574,6 +591,11 @@
     border-radius: 10px;
     color: var(--white);
     font-family: ElMessiri;
+}
+
+#uploadDoc select {
+    padding: 2% !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='white' d='M7.247 11.14l-4.796-5.481c-.566-.647-.106-1.659.753-1.659h9.592c.86 0 1.319 1.012.753 1.659l-4.796 5.48c-.406.46-1.1.46-1.506 0z'/%3e%3c/svg%3e"); 
 }
 
 .add-its-panel input, .add-its-panel select {
@@ -606,6 +628,41 @@
     margin-top: -24px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+}
+
+#videoModal .modal-content, #uploadDoc .modal-content, #uploadDocView .modal-content {
+    background-color: var(--secondary);
+    border-radius: 30px !important;
+}
+
+/* Custom circular close button */
+.btn-close-custom {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    background-color: #0d525b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;       /* remove extra padding */
+    line-height: 0;   /* prevent misalignment */
+}
+
+
+.btn-close-custom:hover {
+    background-color: #094046;
+}
+
+.booking-details-table.add-its-fhno td {
+    background-color: var(--tertiary);
 }
 
 @media screen and (max-width: 1023px) {
@@ -726,6 +783,48 @@
 
 .haj-instructions-content .booking-details-table td {
     padding: 3%;
+}
+
+.haj-registration-details .progress-tracker {
+    margin-top: unset;
+}
+
+.haj-registration-details .pattern-div {
+    height: 55px;
+}
+
+.haj-registration-details .btn-save {
+    width: 220px;
+}
+
+#successModal .modal-content{
+    background-color: var(--secondary);
+    border-radius: 30px !important;
+}
+
+.modal-mumin-info {
+    background: linear-gradient(97.72deg, #0E4653 0.16%, #31ACC8 99.84%);
+    border-radius: 10px;
+}
+
+.modal-mumin-info img {
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    width: 160px;
+    height: 160px;
+}
+
+.modal-mumin-info h3, .modal-mumin-info h4 {
+    color: var(--secondary);
+}
+
+.modal-mumin-info h4>strong {
+    color: var(--primary) !important;
+}
+
+#uploadDoc .modal-body, #uploadDocView .modal-body {
+    background-color: var(--tertiary);
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 1366px) {
