@@ -26,6 +26,10 @@ p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span, label, text, texta
   font-family: ElMessiri;
 }
 
+.text-color-primary {
+  color: var(--title-text-primary) !important;
+}
+
 ul {
   list-style-image: url("../assets/li-pattern.png");
   background-repeat: no-repeat;

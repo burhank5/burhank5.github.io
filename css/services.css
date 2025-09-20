@@ -26,9 +26,9 @@
 .image-overview img.service-overview-image {
     display: block;
     margin: auto;
-    opacity: .2;
+    /* opacity: .2;
     border-radius: 10px;
-    border-bottom-right-radius: 174px;
+    border-bottom-right-radius: 174px; */
 }
 
 .service-overview-image {

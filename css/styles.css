@@ -143,6 +143,7 @@
 .locations .location-link {
     background-color: var(--title-text-primary);
     height: 105px;
+    border: 3px solid var(--primary) !important;
 }
 .locations .location-link h3 {
     color: var(--white);
@@ -170,44 +171,192 @@
     }
 }
 
-/** Discover destination **/
-.map-container {
-    position: relative;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-.map-image {
-    width: 100%;
-    height: auto;
-    display: block;
+@media (min-width: 1024px) and (max-width:1366px) {
+    .contact-wrapper {
+        margin-bottom: 14vi !important;
     }
 
-.map-marker {
-    position: absolute;
-    transform: translate(-50%, -100%);
-    text-align: center;
+    .locations .location-link {
+        height: 124px;
+    }
 }
 
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+  
+.map-image {
+    position: absolute;
+    top: -160px;    
+    left: -200px;   
+    width: 160%;    
+    height: auto;
+}
+  
+/* Marker container */
+.map-marker {
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -100%);
+}
+  
+/* Label style */
 .map-marker span {
     background: #f6f1e7;
-    color: #2d5444;
-    padding: 4px 10px;
-    border-radius: 12px;
+    color: var(--primary);
+    padding: 2px 14px;
+    border-radius: 18px;
     font-size: 14px;
     white-space: nowrap;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    position: relative;
+}
+  
+/* Speech bubble triangle */
+.map-marker span::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #f6f1e7 transparent transparent transparent;
+}
+  
+/* Dot under the triangle */
+.map-marker::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #8C6408;
+    border: 2px solid #fff;
+    border-radius: 50%;
 }
 
-.map-marker::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    background: #c79340;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 5px;
+/* Inverted marker (dot above, label below) */
+.map-marker-inverted {
+    transform: translate(-50%, 0); /* adjust for below placement */
 }
+  
+.map-marker-inverted span::after {
+    top: -6px;
+    bottom: auto;
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent #f6f1e7 transparent;
+}
+  
+.map-marker-inverted::after {
+    top: -20px;
+    bottom: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .map-container {
+        background: url('assets/discover-destination.png') no-repeat center;
+        background-size: contain; /* or cover */
+        position: relative;
+        aspect-ratio: 3/2;
+    }
+      
+    .map-image {
+        top: -160px;
+        left: -200px;
+        width: 864px;
+    }
+      
+    .map-container .map-marker:nth-child(2) {
+        top: 64px !important;
+        left: 24px !important;
+    }
+    .map-container .map-marker:nth-child(3) {
+        top: 157px !important;
+        left: 184px !important;
+    }
+    .map-container .map-marker:nth-child(4) {
+        top: 98px !important;
+        left: 224px !important;
+    }
+    .map-container .map-marker:nth-child(5) {
+        top: 139px !important;
+        left: 238px !important;
+    }
+    .map-container .map-marker:nth-child(6) {
+        top: 51px !important;
+        left: 254px !important;
+    }
+    .map-container .map-marker:nth-child(7) {
+        top: 93px !important;
+        left: 315px !important;
+    }
+    .map-container .map-marker:nth-child(8) {
+        top: 201px !important;
+        left: 301px !important;
+    }
+    .map-container .map-marker:nth-child(9) {
+        top: 246px !important;
+        left: 317px !important;
+    }
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .map-container {
+        background: url('assets/discover-destination.png') no-repeat center;
+        background-size: contain; /* or cover */
+        position: relative;
+        aspect-ratio: 3/2;
+    } 
+    .map-image {
+        top: -160px;
+        left: -200px;
+        width: 1162px;
+    }
+    .map-container .map-marker:nth-child(2) {
+        top: 151px !important;
+        left: 95px !important;
+    }
+    .map-container .map-marker:nth-child(3) {
+        top: 269px !important;
+        left: 312px !important;
+    }
+    .map-container .map-marker:nth-child(4) {
+        top: 194px !important;
+        left: 372px !important;
+    }
+    .map-container .map-marker:nth-child(5) {
+        top: 238px !important;
+        left: 389px !important;
+    }
+    .map-container .map-marker:nth-child(6) {
+        top: 136px !important;
+        left: 400px !important;
+    }
+    .map-container .map-marker:nth-child(7) {
+        top: 190px !important;
+        left: 494px !important;
+    }
+    .map-container .map-marker:nth-child(8) {
+        top: 340px !important;
+        left: 479px !important;
+    }
+    .map-container .map-marker:nth-child(9) {
+        top: 383px !important;
+        left: 513px !important;
+    }
+
+    
+}
+  
 
 /** Bookings **/
 .booking-details-table {
@@ -691,7 +840,7 @@ input#instructionsCheck {
 
 .btn.edit-row, .btn.delete-row {
     border-radius: 50px;
-    width: 80px;
+    width: 100px;
 }
 
 #editModal .btn, #deleteModal .btn {

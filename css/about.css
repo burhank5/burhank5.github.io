@@ -233,11 +233,27 @@ footer a:hover {
   color: var(--white);
 }
 
+.rep-image {
+  width: 400px;
+  height: 400px;
+}
+
+.leaders-img {
+  width: 240px;
+  height: 300px;
+}
+
 @media screen and (max-width: 1023px) {
   .about-text p {
     margin-left: unset;
     margin-right: unset;
     font-size: 18px;
     line-height: 34px;
+  }
+  .leaders-img {
+    height: 260px;
+  }
+  .rep-image {
+    height: 360px;
   }
 }
