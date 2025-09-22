@@ -240,7 +240,7 @@ footer a:hover {
 
 .leaders-img {
   width: 240px;
-  height: auto;
+  height: 270px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -251,10 +251,10 @@ footer a:hover {
     line-height: 34px;
   }
   .leaders-img {
-    height: auto;
+    height: 170px;
   }
   .rep-image {
-    height: auto;
+    height: 270px;
   }
   .bg-dark-gradient {
     height: 93%;
@@ -266,3 +266,24 @@ footer a:hover {
     height: 93%;
   }
 }
+
+/* For fold similar layout */
+@media (min-width: 689px) and (max-width: 920px) {
+  .special-representatives .row > div {
+    flex: 0 0 50%;   /* 2 columns */
+    max-width: 50%;
+  }
+
+  /* Force 3rd card to full width */
+  .special-representatives .row > div:nth-child(3) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .special-representatives .row > div:nth-child(3) a {
+    width: 50%; /* optional: keep card aligned */
+  }
+}
+
