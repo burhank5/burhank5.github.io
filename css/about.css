@@ -235,12 +235,12 @@ footer a:hover {
 
 .rep-image {
   width: 400px;
-  height: 400px;
+  height: auto;
 }
 
 .leaders-img {
   width: 240px;
-  height: 300px;
+  height: auto;
 }
 
 @media screen and (max-width: 1023px) {
@@ -251,9 +251,18 @@ footer a:hover {
     line-height: 34px;
   }
   .leaders-img {
-    height: 260px;
+    height: auto;
   }
   .rep-image {
-    height: 360px;
+    height: auto;
+  }
+  .bg-dark-gradient {
+    height: 93%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bg-dark-gradient {
+    height: 93%;
   }
 }

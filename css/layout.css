@@ -61,13 +61,23 @@ li {
 
 /** ------- Override Default Ends ---------- **/
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .index-page {
     height: 150%;
   }
   .index-page section.hero {
-    height: 100vh !important;
-    min-height: 100vh !important;
+    height: 80dvh !important;
+    min-height: 80dvh !important;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .index-page {
+    height: 150%;
+  }
+  .index-page section.hero {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
   }
 }
 
