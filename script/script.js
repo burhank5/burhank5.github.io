@@ -4,6 +4,23 @@
 // script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'; // Check https://jquery.com/ for the current version
 // document.getElementsByTagName('head')[0].appendChild(script);
 
+// Scroll to Top
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+
+  btn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
 // menu.js
 document.addEventListener('DOMContentLoaded', function () {
   const toggleBtn = document.getElementById('menuToggle');  // The hamburger menu button
