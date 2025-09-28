@@ -35,7 +35,7 @@
 
       <!-- Registration -->
       <li class="nav-item">
-        <a class="nav-link" href="#"><img class="after-login-nav-icons" src="assets/after-login-registration.png" />Registration</a>
+        <a class="nav-link" href="haj-registration-dashboard.html"><img class="after-login-nav-icons" src="assets/after-login-registration.png" />Registration</a>
       </li>
 
       <!-- My Bookings Dropdown -->
@@ -204,8 +204,8 @@
                                     <td>10000</td>
                                     <td>Father</td>
                                     <td>
-                                      <button type="button" class="btn btn-sm btn-primary edit-row mb-lg-0 mb-2">Edit</button>
-                                      <button type="button" class="btn btn-sm btn-danger delete-row mb-lg-0 mb-2">Delete</button>
+                                      <button type="button" class="btn btn-sm btn-primary btn-primary-edit edit-row mb-lg-0 mb-2">Edit</button>
+                                      <button type="button" class="btn btn-sm btn-danger btn-danger-delete delete-row mb-lg-0 mb-2">Delete</button>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -286,13 +286,33 @@
         
         <div class="progress-wrapper p-1">
           <div class="progress-tracker d-flex justify-content-between mb-1 flex-wrap pt-5 pb-5">
-            <div class="step completed mt-3"><div class="circle"><i class="bi bi-check"></i></div><small>Applied</small></div>
-            <div class="step completed mt-3"><div class="circle"><i class="bi bi-check"></i></div><small>In Progress</small></div>
-            <div class="step active mt-3"><div class="circle"></div><small>Verified</small></div>
-            <div class="step warning mt-3"><div class="circle"></div><small>Approved</small></div>
-            <div class="step warning mt-3"><div class="circle"></div><small>Sanctioned</small></div>
+            <div class="step completed mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Your application has been received.">
+              <div class="circle"><i class="bi bi-check"></i></div>
+              <small>Applied</small>
+            </div>
+        
+            <div class="step completed mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Your application is being processed.">
+              <div class="circle"><i class="bi bi-check"></i></div>
+              <small>In Progress</small>
+            </div>
+        
+            <div class="step active mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Your documents have been verified.">
+              <div class="circle"></div>
+              <small>Verified</small>
+            </div>
+        
+            <div class="step warning mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Approval is pending.">
+              <div class="circle"></div>
+              <small>Approved</small>
+            </div>
+        
+            <div class="step warning mt-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Final sanctioning is in process.">
+              <div class="circle"></div>
+              <small>Sanctioned</small>
+            </div>
           </div>
         </div>
+        
 
         <div class="qardan-edit-section">
           <div class="mt-1 d-flex justify-content-center gap-3 flex-wrap p-5">
@@ -402,10 +422,10 @@
           <h3>Mumin Details</h3>
           <div class="golden-separator"></div>
           <div class="row">
-            <div class="col-md-3 text-center">
+            <div class="col-lg-3 col-md-12 text-center">
               <img src="assets/qardan-details-profile.png">
             </div>
-            <div class="col-md-9">
+            <div class="col-lg-9 col-md-12">
               <h4 class="mt-4">Husain bhai Firoz bhai Ratlamwala</h4>
               <br />
               <h4><strong>303359759</strong></h4>
@@ -419,11 +439,11 @@
           <div class="blue-separator"></div>
           <form class="p-2">
             <div class="row mb-3">
-              <div class="col-md-6">
+              <div class="col-md-6 mb-3">
                 <label for="passportNo" class="form-label">Passport No:</label>
                 <input type="text" class="form-control" id="passportNo" placeholder="Z5784237">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 mb-3">
                 <label for="title" class="form-label">Title:</label>
                 <select class="form-select" id="title">
                   <option selected>MR.</option>
@@ -434,26 +454,26 @@
             </div>
   
             <div class="row mb-3">
-              <div class="col-md-4">
+              <div class="col-md-4 mb-3">
                 <label for="firstName" class="form-label">First Name:</label>
                 <input type="text" class="form-control" id="firstName" placeholder="AHMED">
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mb-3">
                 <label for="middleName" class="form-label">Middle Name:</label>
                 <input type="text" class="form-control" id="middleName" placeholder="YUSUF">
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mb-3">
                 <label for="lastName" class="form-label">Last Name:</label>
                 <input type="text" class="form-control" id="lastName" placeholder="VAZIR">
               </div>
             </div>
   
             <div class="row mb-3">
-              <div class="col-md-4">
+              <div class="col-md-4 mb-3">
                 <label for="placeOfBirth" class="form-label">Place of Birth:</label>
                 <input type="text" class="form-control" id="placeOfBirth" placeholder="MUMBAI">
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mb-3">
                 <label for="gender" class="form-label">Gender:</label>
                 <select class="form-select" id="gender">
                   <option selected>MALE</option>
@@ -461,9 +481,94 @@
                   <option>OTHER</option>
                 </select>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mb-3">
                 <label for="placeOfIssue" class="form-label">Place of Issue:</label>
                 <input type="text" class="form-control" id="placeOfIssue" placeholder="MUMBAI">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="dateOfBirth" class="form-label">Date of Birth(dd/mm/yyyy):</label>
+                <input type="date" class="form-control" id="dateOfBirth" value="19/10/1995">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="dateOfIssue" class="form-label">Date of Issue(dd/mm/yyyy):</label>
+                <input type="date" class="form-control" id="dateOfIssue" placeholder="19/10/1995">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="dateOfExpiry" class="form-label">Date of Expiry(dd/mm/yyyy):</label>
+                <input type="date" class="form-control" id="dateOfExpiry" placeholder="19/10/1995">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3 mb-3">
+                <label for="Nationality" class="form-label">Nationality:</label>
+                <input type="text" class="form-control" id="Nationality" placeholder="India">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="state" class="form-label">State:</label>
+                <select class="form-select" id="state">
+                  <option selected>Maharashtra</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Gujurat</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="city" class="form-label">City:</label>
+                <select class="form-select" id="city">
+                  <option selected>Mumbai</option>
+                  <option>Pune</option>
+                  <option>Surat</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="pincode" class="form-label">Pincode:</label>
+                <input type="text" class="form-control" id="pincode" placeholder="400054">
+              </div>
+            </div>
+
+            <div class="row mb-3 mb-3">
+              <div class="col-md-12">
+                <label for="address" class="form-label">Address:</label>
+                <input type="textarea" class="form-control" id="address" placeholder="Mumbai, Maharashtra">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="spousename" class="form-label">Spouse Name:</label>
+                <input type="text" class="form-control" id="spousename" placeholder="Enter Spouse Name">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="mothername" class="form-label">Mother Name:</label>
+                <input type="text" class="form-control" id="mothername" placeholder="Enter Mother Name">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="pancard" class="form-label">Pancard:</label>
+                <input type="text" class="form-control" id="pancard" placeholder="Enter Pancard Number">
+              </div>
+            </div>
+
+            <div class="row mb-3 mt-5">
+              <div class="col-md-12 d-flex mb-4" style="align-items: center;">
+                <input class="form-check-input" type="checkbox" id="expiryCheck" style="border-radius: 5px !important;">
+                <label class="form-check-label fs-5 ms-2" for="expiryCheck">
+                  Check Expiry Date!! Passport is valid frim six months from the date of travel.
+                </label>
+              </div>
+              <div class="col-md-12 d-flex mb-4" style="align-items: center;">
+                <input class="form-check-input" type="checkbox" id="dataCheck" style="border-radius: 5px !important;">
+                <label class="form-check-label fs-5 ms-2" for="dataCheck">
+                  Check Data!! Data entered is correct as per valid passport?
+                </label>
+              </div>
+              <div class="col-md-12 d-flex mb-4" style="align-items: center;">
+                <input class="form-check-input" type="checkbox" id="validPPCheck" style="border-radius: 5px !important;">
+                <label class="form-check-label fs-5 ms-2" for="validPPCheck">
+                  Passport have sufficient pages for visa endorsement and it is not damaged or tempered.
+                </label>
               </div>
             </div>
   

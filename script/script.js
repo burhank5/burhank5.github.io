@@ -209,3 +209,111 @@ document.addEventListener('DOMContentLoaded', function () {
   //   carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
   // }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const markers = document.querySelectorAll(".map-marker");
+  const tooltip = document.getElementById("locationTooltip");
+  const tooltipTitle = document.getElementById("tooltipTitle");
+  const tooltipContent = document.getElementById("destinationTooltipContent");
+  const tooltipClose = document.getElementById("tooltipClose");
+
+  const locationData = {
+    iraq: `
+      <ol class="ps-3">
+        <li>About Karbala
+          <ul class="list-unstyled ms-3">
+            <li><a href="#">Imam Husain As</a></li>
+            <li><a href="#">Moulana Abbas As</a></li>
+            <li><a href="#">Moulana Ali Akbar & Ali Asgar As</a></li>
+            <li><a href="#">Atraaf Ziyarat</a></li>
+          </ul>
+        </li>
+        <li>About Najaf e Ashraf
+          <ul class="list-unstyled ms-3">
+            <li><a href="#">Moulana Ali As</a></li>
+            <li><a href="#">Masjid e Aazam</a></li>
+            <li><a href="#">Atraaf Ziyarat</a></li>
+          </ul>
+        </li>
+        <li>About Najaf e Ashraf
+          <ul class="list-unstyled ms-3">
+            <li><a href="#">Moulana Ali As</a></li>
+            <li><a href="#">Masjid e Aazam</a></li>
+            <li><a href="#">Atraaf Ziyarat</a></li>
+          </ul>
+        </li>
+        <li>AQA Moula TUS Safar Photos
+        </li>
+        <li><a href='destination-about-after-login.html#packageContainer'>Packages</a>
+        </li>
+      </ol>
+    `,
+    egypt: `<p>Content about Egypt here.</p>`,
+    syria: `<p>Content about Syria here.</p>`,
+    jordan: `<p>Content about Jordan here.</p>`,
+    tunisia: `<p>Content about Tunisia here.</p>`,
+    bait: `<p>Content about Bait al-Muqaddas here.</p>`,
+    saudi: `<p>Content about Saudi Arabia here.</p>`,
+    yemen: `<p>Content about Yemen here.</p>`
+  };
+
+  markers.forEach(marker => {
+    marker.addEventListener("mouseover", function () {
+      const rect = marker.getBoundingClientRect();
+      const containerRect = marker.closest(".map-container").getBoundingClientRect();
+      const location = this.dataset.location;
+
+      tooltipTitle.textContent = this.querySelector("span").textContent;
+      tooltipContent.innerHTML = locationData[location] || "<p>No details available.</p>";
+
+      tooltip.style.visibility = "hidden";
+      tooltip.style.display = "block";
+
+      const tooltipHeight = tooltip.offsetHeight;
+      const tooltipWidth = tooltip.offsetWidth;
+
+      const spaceAbove = rect.top - containerRect.top;
+      const spaceBelow = containerRect.height - (rect.bottom - containerRect.top);
+
+      let top, placement;
+
+      if (spaceAbove > tooltipHeight + 20) {
+        // fits above
+        top = rect.top - containerRect.top - tooltipHeight - 20;
+        placement = "top";
+      } else if (spaceBelow > tooltipHeight + 20) {
+        // fits below
+        top = rect.bottom - containerRect.top + 20;
+        placement = "bottom";
+      } else {
+        // force to top of container
+        top = 10;
+        placement = "bottom"; // arrow still points up
+      }
+
+      let left = rect.left - containerRect.left - tooltipWidth / 2 + rect.width / 2;
+
+      if (left + tooltipWidth > containerRect.width) {
+        left = containerRect.width - tooltipWidth - 10;
+      }
+      if (left < 0) left = 10;
+
+      tooltip.classList.remove("top", "bottom");
+      tooltip.classList.add(placement);
+
+      tooltip.style.top = `${top}px`;
+      tooltip.style.left = `${left}px`;
+
+      // Arrow alignment
+      const markerCenterX = rect.left - containerRect.left + rect.width / 2;
+      const arrowX = markerCenterX - left;
+      tooltip.style.setProperty("--arrow-position", `${arrowX}px`);
+
+      tooltip.style.visibility = "visible";
+    });
+  });
+
+  tooltipClose.addEventListener("click", () => {
+    tooltip.style.display = "none";
+  });
+});

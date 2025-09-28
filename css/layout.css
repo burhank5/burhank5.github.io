@@ -22,7 +22,7 @@ section.breadcrumb-section {
   flex: unset !important;
 }
 
-p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span, label, text, textarea, select  {
+p, h1, h2, h3, h4, h5, h6, .form-control, small, a, li, span, label, text, textarea, select, strong  {
   font-family: ElMessiri;
 }
 
@@ -221,6 +221,17 @@ li {
   width: 60px;
   height: 60px;
   object-fit: cover;
+}
+
+/** Modal specific heights **/
+#uploadDoc .modal-dialog input:not(.form-check-input) {
+  height: 38px !important;
+  padding: 5px !important;
+}
+
+#uploadDoc .modal-dialog select {
+  height: 38px !important;
+  padding: 5px !important;
 }
 
 /* Target all checkboxes */

@@ -16,7 +16,6 @@
     <a href="index.html" class="logo">
       <img src="assets/fayz-logo.png" alt="Logo" class="img-fluid">
     </a>
-
     <!-- After login Navigation -->
     <nav class="after-login-nav d-flex gap-3 align-items-center">
       <!-- Destination Dropdown -->
@@ -30,23 +29,23 @@
         </ul>
       </li>
       <!-- Announcements -->
-      <li class="nav-item">
-        <a class="nav-link" href="announcements.html"><img class="after-login-nav-icons" src="assets/after-login-announcements.png" />Announcements</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="announcements.html"><img class="after-login-nav-icons" src="assets/after-login-announcements-dark.png" />Announcements</a>
       </li>
 
       <!-- Registration -->
       <li class="nav-item">
-        <a class="nav-link" href="#"><img class="after-login-nav-icons" src="assets/after-login-registration.png" />Registration</a>
+        <a class="nav-link" href="haj-registration-dashboard.html"><img class="after-login-nav-icons" src="assets/after-login-registration.png" />Registration</a>
       </li>
 
       <!-- My Bookings Dropdown -->
-      <li class="nav-item dropdown active">
+      <li class="nav-item dropdown" style="padding-right: 10px;">
         <a class="nav-link dropdown-toggle" href="#" id="bookingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img class="after-login-nav-icons" src="assets/after-login-bookings.png" />My Bookings
+          <img class="after-login-nav-icons" src="assets/after-login-bookings-light.png" />My Bookings
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
           <li><a class="dropdown-item" href="bookings.html">My Bookings</a></li>
-          <li><a class="dropdown-item" href="receipt.html">Receipts</a></li>
+          <li><a class="dropdown-item" href="#">Past</a></li>
         </ul>
       </li>
     </nav>
@@ -71,23 +70,20 @@
 
     <!-- Hamburger for mobile -->
     <button class="menu-toggle menu-toggle-after-login" id="menuToggle" aria-label="Toggle menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </button>
 
   </header>
 
   <!-- Mobile Menu (hidden by default) -->
   <div class="mobile-menu px-3 py-2" id="mobileNav">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about-us-1.html" class="nav-link">About Us</a>
-    <a href="services.html" class="nav-link active">Services</a>
-    <a href="gallery.html" class="nav-link">Gallery</a>
-    <a href="testimonials.html" class="nav-link">Testimonial</a>
     <a href="destination.html" class="nav-link">Destination</a>
-    <a href="contact.html" class="nav-link">Contact Us</a>
-    <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png" height="20"></a>
+    <a href="announcements.html" class="nav-link">Announcements</a>
+    <a href="#" class="nav-link">Registration</a>
+    <a href="bookings.html" class="nav-link">My Bookings</a>
+    <a href="receipt.html" class="nav-link">Receipts</a>
   </div>
 
   <!-- Destination Wrapper -->
@@ -99,48 +95,61 @@
         <img src="assets/discover-destination.png" alt="Destinations Map" class="map-image">
         <!-- Location Markers -->
         <!-- Tunisia -->
-        <div class="map-marker" style="top: 37%; left: 19%;">
+        <div class="map-marker" style="top: 37%; left: 19%;" data-location="tunisia">
           <span>Tunisia</span>
         </div>
       
         <!-- Egypt -->
-        <div class="map-marker" style="top: 65%; left: 50%;">
+        <div class="map-marker" style="top: 65%; left: 50%;" data-location="egypt">
           <span>Egypt</span>
         </div>
       
         <!-- Bait al-Muqaddas -->
-        <div class="map-marker" style="top: 48%; left: 56.3%;">
+        <div class="map-marker" style="top: 48%; left: 56.3%;" data-location="bait-ul-muqaddas">
           <span>Bait al-Muqaddas</span>
         </div>
       
         <!-- Jordan (inverted marker) -->
-        <div class="map-marker map-marker-inverted" style="top: 55%; left: 59%;">
+        <div class="map-marker map-marker-inverted" style="top: 55%; left: 59%;" data-location="jordan">
           <span>Jordan</span>
         </div>
       
         <!-- Syria -->
-        <div class="map-marker" style="top: 35%; left: 61%;">
+        <div class="map-marker" style="top: 35%; left: 61%;" data-location="syria">
           <span>Syria</span>
         </div>
       
         <!-- Iraq -->
-        <div class="map-marker" style="top: 46%; left: 74%;">
+        <div class="map-marker" style="top: 46%; left: 74%;" data-location="iraq">
           <span>Iraq</span>
         </div>
       
         <!-- Saudi Arabia -->
-        <div class="map-marker" style="top: 77%; left: 71%;">
+        <div class="map-marker" style="top: 77%; left: 71%;" data-location="saudi">
           <span>Saudi Arabia</span>
         </div>
       
         <!-- Yemen -->
-        <div class="map-marker" style="top: 88%; left: 74%;">
+        <div class="map-marker" style="top: 88%; left: 74%;" data-location="yemen">
           <span>Yemen</span>
         </div>
+
+        <!-- Floating Tooltip Card -->
+        <div class="location-tooltip shadow" id="locationTooltip">
+          <button type="button" class="btn-close float-end" id="tooltipClose"></button>
+          <h4 class="fw-bold" id="tooltipTitle">Location</h4>
+          <div id="destinationTooltipContent">
+            <p>Select a marker to see details.</p>
+          </div>
+        </div>
+
       </div>
-      
-      
     </div>
+
+    <!-- Back to Top Button -->
+    <button type="button" class="btn btn-primary btn-lg back-to-top" id="backToTopBtn">
+      <i class="bi bi-chevron-up"></i>
+    </button>
   </section>
 
   <!-- FOOTER -->

@@ -266,6 +266,8 @@
         background-size: contain; /* or cover */
         position: relative;
         aspect-ratio: 3/2;
+        /* max-height: 500px;   
+        overflow: visible;   */
     }
       
     .map-image {
@@ -306,7 +308,6 @@
         top: 246px !important;
         left: 317px !important;
     }
-    
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -352,9 +353,79 @@
     .map-container .map-marker:nth-child(9) {
         top: 383px !important;
         left: 513px !important;
-    }
+    }    
+}
 
-    
+/** Map location hover card **/
+/* Tooltip Card */
+.location-tooltip {
+    position: absolute;
+    display: none;
+    background: #e8e6db;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.location-tooltip.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Arrow (default pointing down from card to marker) */
+.location-tooltip::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    left: var(--arrow-position, 50%);
+    transform: translateX(-50%);
+}
+
+/* Arrow styles for top/bottom placement */
+.location-tooltip.top::after {
+    bottom: -12px;
+    border-width: 12px 12px 0 12px;
+    border-color: #e8e6db transparent transparent transparent;
+}
+
+.location-tooltip.bottom::after {
+    top: -12px;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent #e8e6db transparent;
+}
+
+/* Close button */
+.tooltip-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+}
+
+.tooltip-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tooltip-content p {
+    margin: 5px 0;
+}
+
+#destinationTooltipContent li {
+    font-size: 16px !important;
+    margin-bottom: 2px !important;
+}
+
+#destinationTooltipContent li>a {
+    text-decoration: underline;
+    color: var(--primary);
 }
   
 
@@ -1048,3 +1119,183 @@ input#instructionsCheck {
     }
 }
 /** Haj Registration CSS Ends **/
+
+/** Book Packages CSS Starts here **/
+/* card wrapper */
+.package-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+    background: var(--secondary);
+    transition: transform 1s ease;
+}
+  
+.package-card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,.12); 
+}
+  
+/* package image */
+.package-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+  
+.package-card:hover .package-img:hover {
+    filter: brightness(70%);
+}
+  
+/* package body */
+.package-body {
+    box-sizing: border-box;
+    background: var(--secondary);
+    border-radius: var(--card-radius);
+    margin-top: -26px;                /* pull up to overlap image */
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;                 /* hide book btn when collapsed */
+    max-height: var(--body-min-h);    /* collapsed height */
+    height: var(--body-min-h);    /* main height */
+    transition: max-height var(--transition-speed) cubic-bezier(.22,.9,.35,1),
+                padding var(--transition-speed) cubic-bezier(.22,.9,.35,1);
+    display: flex;
+    flex-direction: column;
+}
+  
+/* expand body smoothly on card hover */
+.package-card:hover .package-body {
+    max-height: var(--body-max-h);
+    height: var(--body-max-h);
+    padding-bottom: 26px; /* more room for revealed button */
+}
+  
+/* price row */
+.price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+    
+.price-item {
+    font-size: 1rem;
+    color: var(--title-text-primary);
+    position: relative;
+}
+  
+.price-item:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 28%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 60%;
+    background-color: var(--title-text-primary);
+}
+  
+/* dashed line */
+hr.card-center {
+    border: none;
+    border-top: 2px dashed var(--title-text-primary);
+    background-color: transparent;
+    height: 1px;
+    width: 100%;
+}
+  
+/* book button inside body, aligned at bottom */
+.book-row {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+  
+.book-btn {
+    padding: 12px 30px;
+    border-radius: 28px;
+    border: none;
+    background: var(--title-text-primary);
+    color: var(--secondary);
+    width: 90%;
+    font-family: ElMessiri;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    display: inline-flex;    
+    align-items: center;
+    justify-content: center;
+    gap: 12px;  /* space between text and circle */
+  
+    /* start hidden */
+    opacity: 0;
+    transform: translateY(20px);
+  
+    /* smooth, slow animation */
+    transition: opacity 0s ease, transform 0s ease;
+    transition-delay: 0s;
+  
+    box-shadow: 0 6px 18px rgba(19,70,66,0.12);
+}
+  
+/* reveal on hover */
+.package-card:hover .book-btn {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s; /* wait until body expands */
+}
+  
+.book-btn:hover {
+    background: #032c36;
+}
+  
+/* headings + text */
+  .package-card h4, .package-card h6 {
+    color: var(--title-text-primary);
+}
+  
+.package-card p {
+    color: var(--title-text-primary);
+    font-weight: 400 !important;
+    font-size: 17px !important;
+}
+
+.book-btn .circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: var(--title-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* arrow size */
+}
+  
+/* responsive */
+@media (max-width: 1023px) {
+    .price-row { 
+      flex-direction: column; 
+      gap: 6px; 
+    }
+    .price-item:not(:last-child)::after { 
+      display: none; 
+    }
+    :root { --body-min-h: 300px; --body-max-h: 360px;}
+    .package-img { height: 390px; }
+}
+
+.packages-instructions-content h4::before {
+    content: url(../assets/li-pattern.png);
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-size: 24px;
+}
+
+.packages-instructions-content>h4 {
+    color: var(--title-text-primary);
+    line-height: 55px;
+}
+/** Book Packages CSS Ends here **/

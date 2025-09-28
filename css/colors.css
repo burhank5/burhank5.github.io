@@ -11,6 +11,10 @@
     --divider-color: #0d4a52;
     --button-secondary: #31ACC8;
     --warning: #ff0000;
+    --card-radius: 18px;
+    --body-min-h: 260px;   /* collapsed visible area */
+    --body-max-h: 320px;   /* expanded area when hovered */
+    --transition-speed: 0.8s;
 }
 
 @font-face {

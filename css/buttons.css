@@ -64,3 +64,23 @@
 .btn-cw-150 {
   width: 150px !important;
 }
+
+.btn-primary-edit {
+  background: #1998b2 !important;
+  color: var(--secondary) !important;
+}
+
+.btn-primary-edit:hover {
+  background: var(--secondary) !important;
+  color: #1998b2 !important;
+}
+
+.btn-danger-delete {
+  background: var(--warning) !important;
+  color: var(--secondary) !important;
+}
+
+.btn-danger-delete:hover {
+  background: var(--secondary) !important;
+  color: var(--warning) !important;
+}
