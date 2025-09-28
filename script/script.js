@@ -1,9 +1,3 @@
-
-//always import jquery
-// var script = document.createElement('script');
-// script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'; // Check https://jquery.com/ for the current version
-// document.getElementsByTagName('head')[0].appendChild(script);
-
 // Scroll to Top
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("backToTopBtn");
@@ -133,30 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
   $("#nextBtn").click(function(){
     owl.trigger('next.owl.carousel');
   });
-  // const cards = document.querySelectorAll(".testimonial-item");
-  // let startIndex = 0;
-
-  // function showCards(index) {
-  //   cards.forEach((card, i) => {
-  //     card.classList.add("d-none");
-  //     if (i >= index && i < index + 3) {
-  //       card.classList.remove("d-none");
-  //     }
-  //   });
-  // }
-
-  // document.getElementById("prevBtn").addEventListener("click", () => {
-  //   startIndex = (startIndex - 1 + cards.length) % cards.length;
-  //   showCards(startIndex);
-  // });
-
-  // document.getElementById("nextBtn").addEventListener("click", () => {
-  //   startIndex = (startIndex + 1) % cards.length;
-  //   showCards(startIndex);
-  // });
-
-  // // Initialize
-  // showCards(startIndex);
 
   const cards = document.querySelectorAll(".testimonial-item");
   let startIndex = 0;
@@ -202,12 +172,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initial display
   showCards(startIndex);
 
-
-  // function scrollCarousel(direction) {
-  //   const carousel = document.querySelector('.testimonial-carousel');
-  //   const scrollAmount = carousel.offsetWidth * 0.33; // scroll 1 card width
-  //   carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-  // }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -313,7 +277,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  tooltipClose.addEventListener("click", () => {
-    tooltip.style.display = "none";
-  });
+    if(tooltipClose) {
+    tooltipClose.addEventListener("click", () => {
+      tooltip.style.display = "none";
+    });
+  }
 });
