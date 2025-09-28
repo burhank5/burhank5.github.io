@@ -169,17 +169,27 @@ li {
 
 .after-login-nav a.dropdown-item {
   color: var(--primary);
-  padding: 10px;
+  padding: 1px;
+  font-size: 16px;
 }
 
 .after-login-nav .nav-item.active a {
   color: var(--primary);
-  padding: 10px;
+  padding: 1px;
+}
+
+.after-login-nav .nav-item.active a.dropdown-item {
+  font-size: 18px;
+}
+
+ul.dropdown-menu li {
+  margin-bottom: 2px;
+  padding: 2px !important;
 }
 
 .after-login-nav .nav-item {
   margin: 0 !important;   /* remove bootstrap default spacing */
-  padding-left: 10px; /* reset */
+  padding-left: 0px; /* reset */
 }
 
 .after-login-nav .nav-item.active .nav-link {
@@ -189,7 +199,7 @@ li {
   
   /* remove default gaps */
   margin: 0 !important; 
-  padding: 16px 18px !important;
+  padding: 16px 18px 16px 18px !important;
   display: inline-flex;
   align-items: center;
   gap: 6px; /* keeps icon & text spaced nicely */
@@ -200,6 +210,17 @@ li {
   width: 18px !important;
   height: 18px !important;
   margin: 5px 10px 5px 10px;
+}
+
+.after-login-dropdown-icons {
+  display: flex;
+  width: 16px !important;
+  height: 20px !important;
+  margin: 5px 10px 5px 10px;
+}
+
+.dropdown-menu {
+  background-color: var(--secondary) !important;
 }
 
 .after-login-nav .dropdown-toggle::after {
@@ -274,4 +295,8 @@ li {
 
 .back-to-top i {
   font-size: 1.5rem;
+}
+
+.back-to-top.show {
+  background-color: var(--primary) !important;
 }

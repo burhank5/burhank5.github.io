@@ -1142,7 +1142,7 @@ input#instructionsCheck {
     object-fit: cover;
 }
   
-.package-card:hover .package-img:hover {
+.package-card:hover .package-img {
     filter: brightness(70%);
 }
   
