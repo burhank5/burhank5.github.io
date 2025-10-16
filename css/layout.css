@@ -165,6 +165,7 @@ li {
   color: var(--secondary);
   padding: 1%;
   display: flex;
+  cursor: pointer;
 }
 
 .after-login-nav a.dropdown-item {

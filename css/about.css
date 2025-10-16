@@ -238,7 +238,7 @@ footer a:hover {
 }
 
 .rep-image {
-  width: 400px;
+  width: 50%;
   height: auto;
 }
 
@@ -258,7 +258,7 @@ footer a:hover {
     height: 170px;
   }
   .rep-image {
-    height: 270px;
+    height: auto;
   }
   .bg-dark-gradient {
     height: 93%;

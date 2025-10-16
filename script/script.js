@@ -13,6 +13,19 @@ document.addEventListener("DOMContentLoaded", function () {
   btn.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  const readMoreBtn = document.getElementById("readMoreBtn");
+  const moreText = document.getElementById("moreText");
+
+  readMoreBtn.addEventListener("click", function () {
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+      moreText.style.display = "inline";
+      readMoreBtn.textContent = "Read Less ↑";
+    } else {
+      moreText.style.display = "none";
+      readMoreBtn.textContent = "Read More ↓";
+    }
+  });
 });
 
 // menu.js
@@ -212,13 +225,66 @@ document.addEventListener("DOMContentLoaded", function () {
         </li>
       </ol>
     `,
-    egypt: `<p>Content about Egypt here.</p>`,
-    syria: `<p>Content about Syria here.</p>`,
-    jordan: `<p>Content about Jordan here.</p>`,
-    tunisia: `<p>Content about Tunisia here.</p>`,
+    egypt: `<ol class="ps-3">
+          <li>About Al Qahera Al Muizziyah
+            <ul class="list-unstyled ms-3">
+              <li><a href="#">Rasul Imam Husain AS</a></li>
+              <li><a href="#">Maulatana Zainab AS</a></li>
+              <li><a href="#">Maultana Nafisa AS</a></li>
+              <li><a href="#">Maulatana Ruqaiyah AS</a></li>
+              <li><a href="#">Jawam e Fatimiyah</a></li>
+              <li><a href="#">Maulatana Ruqaiyah AS</a></li>
+              <li><a href='destination-about-after-login.html#packageContainer'>Packages</a></li>
+            </ul>
+          </li>
+        </ol>`,
+    syria: `<ol class="ps-3">
+      <li>About Syria
+        <ul class="list-unstyled ms-3">
+          <li><a href="#">Maulatana Sakina AS</a></li>
+          <li><a href="#">Maulatana Umme Kulsum AS</a></li>
+          <li><a href="#">Atraaf Ziyarat</a></li>
+          <li><a href='destination-about-after-login.html#packageContainer'>Packages</a></li>
+        </ul>
+      </li>
+    </ol>`,
+    jordan:  `<ol class="ps-3">
+      <li>About Amman
+        <ul class="list-unstyled ms-3">
+          <li><a href="#">Akhbar - Maulana Jafar ul Taiyar AS</a></li>
+          <li><a href='destination-about-after-login.html#packageContainer'>Packages</a></li>
+        </ul>
+      </li>
+    </ol>`,
+    tunisia:  `<ol class="ps-3">
+    <li>About Tunisia
+      <ul class="list-unstyled ms-3">
+        <li><a href="#">Significance of Tunisia (Aimmat Fatimiyeen AS)</a></li>
+        <li><a href="#">Syedna Mohammad Burhanuddin RA's historic visit to Tunisia</a></li>
+        <li><a href="#">Landmarks and historical sites in Tunisia</a></li>
+        <li><a href='destination-about-after-login.html#packageContainer'>Packages</a></li>
+      </ul>
+    </li>
+  </ol>`,
     bait: `<p>Content about Bait al-Muqaddas here.</p>`,
     saudi: `<p>Content about Saudi Arabia here.</p>`,
-    yemen: `<p>Content about Yemen here.</p>`
+    yemen:  `<ol class="ps-3">
+    <li>About Yemen 
+      <ul class="list-unstyled ms-3">
+        <li><a href="#">Naqlul Dawat Ila Yemen</a></li>
+        <li><a href="#">Maulatana Hurratul Maleka RA</a></li>
+        <li><a href="#">Akhbar ul Duat RA</a></li>
+          <ol class="ps-3">
+            <ul class="list-unstyled ms-3">
+              <li><a href="#">Syedna Hatim RA</a></li>
+              <li><a href="#">Syedna Ali bin Moula Mohammad Al Walid RA</a></li>
+              <li><a href="#">Syedna idris RA</a></li>
+            </ul>
+          </ol>
+        <li><a href='destination-about-after-login.html#packageContainer'>Packages</a></li>
+      </ul>
+    </li>
+  </ol>`,
   };
 
   markers.forEach(marker => {

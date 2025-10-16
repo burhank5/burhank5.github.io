@@ -210,7 +210,7 @@
 
               <!-- Book Now button overlay -->
               <div class="book-overlay">
-                <button class="book-btn">Book Now<span class="circle"><i class="bi bi-arrow-right"></i></span></button>
+                <button class="book-btn" data-bs-toggle="modal" data-bs-target="#itsFormModal">Book Now<span class="circle"><i class="bi bi-arrow-right"></i></span></button>
               </div>
             </div>
           </div>
@@ -320,6 +320,257 @@
       <i class="bi bi-chevron-up"></i>
     </button>
   </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="itsFormModal" tabindex="-1" aria-labelledby="itsFormLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <form id="itsForm">
+            <div class="row g-3">
+
+              <div class="col-md-6 form-floating">
+                <input type="text" class="form-control" id="itsID" placeholder="ITS ID">
+                <label for="itsID">ITS ID</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="text" class="form-control" id="name" placeholder="Name (As per ITS)">
+                <label for="name">Name (As per ITS)</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="text" class="form-control" id="surname" placeholder="Surname*" required>
+                <label for="surname">Surname*</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="email" class="form-control" id="email" placeholder="Email*" required>
+                <label for="email">Email*</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="tel" class="form-control" id="mobile1" placeholder="Mobile Number*" required>
+                <label for="mobile1">Mobile Number*</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="tel" class="form-control" id="mobile2" placeholder="Mobile Number 2">
+                <label for="mobile2">Mobile Number 2</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="tel" class="form-control" id="whatsapp" placeholder="Whatsapp Number">
+                <label for="whatsapp">Whatsapp Number</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="text" class="form-control" id="jamaat" placeholder="Jamaat*" required>
+                <label for="jamaat">Jamaat*</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <select class="form-select" id="country">
+                  <option>India</option>
+                  <option>USA</option>
+                  <option>UK</option>
+                </select>
+                <label for="country">Country of Residence</label>
+              </div>
+
+              <div class="col-md-6 form-floating">
+                <input type="text" class="form-control" id="city" placeholder="City*" required>
+                <label for="city">City*</label>
+              </div>
+
+              <div class="col-12 mt-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" required>
+                  <label class="form-check-label" for="terms">
+                    By clicking this checkbox, you have read and accept our
+                    <a href="#">Terms and Conditions</a>.
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 d-flex justify-content-center gap-3 mt-4">
+                <button type="button" class="btn btn-cancel px-4 py-2" data-bs-dismiss="modal" style="border-radius: 40px;">Cancel</button>
+                <button type="submit" id="submitBtn" class="btn btn-submit px-4 py-2">
+                  <span class="btn-text">Submit ↗</span>
+                  <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <style>
+    :root{
+      /* tweak these to change spacing quickly */
+      --input-vert-padding: 1.1rem;
+      --input-horiz-padding: 1rem;
+      --label-scale: .85;
+      --label-up-translate: -1.6rem;
+    }
+
+    /* Modal styling */
+    .modal-content {
+      background-color: #fffbea;
+      border-radius: 20px;
+      padding: 1.5rem 1.5rem 2rem;
+      border: none;
+    }
+    .modal-header { border-bottom: none; justify-content: flex-end; }
+    .btn-close {
+      background-color: #caa;
+      opacity: 1;
+      border-radius: 50%;
+      padding: 0.5rem;
+      filter: none;
+      width: 40px; height: 40px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .modal-dialog { max-width: 900px; }
+
+    /* Inputs + select visual */
+    .form-control,
+    .form-select {
+      border: 1px solid #6b7d6b;
+      border-radius: 8px;
+      background-color: transparent;
+      padding: var(--input-vert-padding) var(--input-horiz-padding);
+      height: auto;
+      box-shadow: none;
+    }
+
+    /* --- Floating label fixes --- */
+    /* Place the label exactly where input text starts */
+    .form-floating {
+      position: relative;
+    }
+    .form-floating > label {
+      position: absolute;
+      left: var(--input-horiz-padding);
+      top: calc(var(--input-vert-padding) / 2); /* vertically center inside input when resting */
+      transform-origin: left top;
+      transition: transform .18s ease-in-out, top .18s ease-in-out, font-size .18s;
+      padding: 0 .25rem; /* small padding when scaled up */
+      pointer-events: none;
+      color: #c56a00;
+      background: transparent;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .form-floating>.form-select~label::after {
+      height: 0.1rem !important;
+    }
+
+    /* When input is focused OR has content - move label up + scale */
+    /* For inputs: use :placeholder-shown to detect empty. We keep placeholders present. */
+    .form-floating .form-control:not(:placeholder-shown) ~ label,
+    .form-floating .form-control:focus ~ label {
+      transform: translateY(var(--label-up-translate)) scale(var(--label-scale));
+      top: 0.7rem;
+      font-size: .95rem;
+      background: transparent;
+      z-index: 0;
+    }
+
+    /* For selects: rely on :valid state (placeholder option has value="") and `required` on select */
+    .form-floating .form-select:focus ~ label,
+    .form-floating .form-select:valid ~ label {
+      transform: translateY(var(--label-up-translate)) scale(var(--label-scale));
+      top: 0.7rem;
+      font-size: .95rem;
+      background: transparent;
+      z-index: 0;
+    }
+
+    /* Make sure floating label doesn't overlap the input border corners (little rounded background) */
+    .form-floating .form-control:not(:placeholder-shown) ~ label,
+    .form-floating .form-select:valid ~ label {
+      padding-left: .4rem;
+      padding-right: .4rem;
+    }
+
+    /* Small polish for placeholder text so it's not visible but keeps :placeholder-shown working */
+    .form-control::placeholder { color: transparent; opacity: 0; }
+
+    /* Focus z-index so label + input behave nicely */
+    .form-floating .form-control:focus,
+    .form-floating .form-select:focus {
+      z-index: 2;
+      box-shadow: none;
+    }
+
+    /* Buttons & other styling */
+    .btn-submit { background-color: #f6a531; color:#fff; font-weight:600; border:none; }
+    .btn-cancel { border:2px solid #f6a531; color:#f6a531; font-weight:600; background:transparent; }
+    .form-check-label, a { color: #c56a00; }
+    .form-check-input { border-color: #c56a00; width:1.2rem; height:1.2rem; }
+  </style>
+
+   <!-- Success Modal -->
+   <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <div class="modal-header border-0">
+          <img src="assets/form-submit-checkmark.png" style="margin: 0 auto; width:80px;">
+        </div>
+        <div class="modal-body">
+          <h4>Thank you For Submitting the Form</h4>
+          <h4>You Will be Contacted Soon</h4>
+        </div>
+        <div class="modal-footer border-0" style="margin: 0 auto;">
+          <button type="button" class="btn btn-save" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("itsForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const btnText = submitBtn.querySelector(".btn-text");
+    const spinner = submitBtn.querySelector(".spinner-border");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      console.log("inside")
+      // Disable button and show loader
+      submitBtn.disabled = true;
+      btnText.classList.add("d-none");
+      spinner.classList.remove("d-none");
+
+      // Simulate form submission delay (2 seconds)
+      setTimeout(() => {
+        // Reset loader
+        submitBtn.disabled = false;
+        btnText.classList.remove("d-none");
+        spinner.classList.add("d-none");
+
+        // Hide form modal, show success modal
+        const formModal = bootstrap.Modal.getInstance(document.getElementById('itsFormModal'));
+        formModal.hide();
+
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+
+        form.reset();
+      }, 2000);
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">
