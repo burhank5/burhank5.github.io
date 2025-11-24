@@ -9,7 +9,7 @@
 @import url(services.css);
 
 /** Gallery Filter **/
-.filter-scroll {
+/* .filter-scroll {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -17,7 +17,69 @@
     gap: 0.75rem;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+} */
+
+/* wrapper just for positioning nav if needed later */
+.filter-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
+/* horizontal scroll, one line */
+.filter-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 48px; /* space for arrows */
+  width: 100%;
+}
+
+/* hide scrollbar (optional) */
+.filter-scroll::-webkit-scrollbar {
+  display: none;
+}
+.filter-scroll {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* make sure pills don’t wrap text onto next line */
+.filter-scroll .btn.filter-outline {
+  white-space: nowrap;
+}
+
+/* arrows like circular nav buttons */
+.filter-arrow {
+  position: absolute;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #006f7a; /* adjust to your theme */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-size: 18px;
+}
+
+.filter-arrow-left {
+  left: 0;
+}
+
+.filter-arrow-right {
+  right: 0;
+}
+
+
+
+
 
 /* Prevent shrinking */
 .filter-scroll .btn {

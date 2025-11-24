@@ -17,15 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const readMoreBtn = document.getElementById("readMoreBtn");
   const moreText = document.getElementById("moreText");
 
-  readMoreBtn.addEventListener("click", function () {
+  if(readMoreBtn) {
+    readMoreBtn.addEventListener("click", function () {
     if (moreText.style.display === "none" || moreText.style.display === "") {
-      moreText.style.display = "inline";
-      readMoreBtn.textContent = "Read Less ↑";
-    } else {
-      moreText.style.display = "none";
-      readMoreBtn.textContent = "Read More ↓";
-    }
-  });
+        moreText.style.display = "inline";
+        readMoreBtn.textContent = "Read Less ↑";
+      } else {
+        moreText.style.display = "none";
+        readMoreBtn.textContent = "Read More ↓";
+      }
+    });
+  }
 });
 
 // menu.js
@@ -140,6 +142,33 @@ document.addEventListener('DOMContentLoaded', function () {
   $("#nextBtn").click(function(){
     owl.trigger('next.owl.carousel');
   });
+
+  //Gallery filter carousel
+  // $('#galleryFilterCarousel').owlCarousel({
+  //   nav: true,
+  //   dots: false,
+  //   autoWidth: true,   // buttons keep natural width
+  //   margin: 10,
+  //   items: 3,
+  //   navText: [
+  //     '<span class="owl-filter-prev">&larr;</span>',
+  //     '<span class="owl-filter-next">&rarr;</span>'
+  //   ]
+  // });
+  const scroller = document.getElementById('filterScroll');
+  const prevBtnG  = document.getElementById('filterPrev');
+  const nextBtnG  = document.getElementById('filterNext');
+
+  const scrollAmount = 200; // px per click
+  if(scroller) {
+    prevBtnG.addEventListener('click', function () {
+    scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtnG.addEventListener('click', function () {
+      scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
 
   const cards = document.querySelectorAll(".testimonial-item");
   let startIndex = 0;
