@@ -144,17 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   //Gallery filter carousel
-  // $('#galleryFilterCarousel').owlCarousel({
-  //   nav: true,
-  //   dots: false,
-  //   autoWidth: true,   // buttons keep natural width
-  //   margin: 10,
-  //   items: 3,
-  //   navText: [
-  //     '<span class="owl-filter-prev">&larr;</span>',
-  //     '<span class="owl-filter-next">&rarr;</span>'
-  //   ]
-  // });
   const scroller = document.getElementById('filterScroll');
   const prevBtnG  = document.getElementById('filterPrev');
   const nextBtnG  = document.getElementById('filterNext');
@@ -178,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return window.innerWidth < 768 ? 1 : 3; // 1 card on mobile, 3 on desktop
   }
 
+  //Show/hide gallery cards on filter clicked
   function showCards(index) {
     const cardsPerView = getCardsPerView();
     cards.forEach((card, i) => {
@@ -216,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// Scripting for the map location data
 document.addEventListener("DOMContentLoaded", function () {
   const markers = document.querySelectorAll(".map-marker");
   const tooltip = document.getElementById("locationTooltip");
@@ -223,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tooltipContent = document.getElementById("destinationTooltipContent");
   const tooltipClose = document.getElementById("tooltipClose");
 
+  // Add the data for the location here
   const locationData = {
     iraq: `
       <ol class="ps-3">
@@ -316,6 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </ol>`,
   };
 
+  // calculates the width/height of the screen on hover and accordingly places the popup in the bottom/top
   markers.forEach(marker => {
     marker.addEventListener("mouseover", function () {
       const rect = marker.getBoundingClientRect();
