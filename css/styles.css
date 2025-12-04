@@ -1407,3 +1407,11 @@ hr.card-center {
     line-height: 55px;
 }
 /** Book Packages CSS Ends here **/
+
+/** Form validation CSS starts here **/
+#uploadDoc .form-label.required::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+/** Form validation CSS ends here **/

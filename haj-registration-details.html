@@ -15,9 +15,52 @@
     <a href="index.html" class="logo">
       <img src="assets/fayz-logo.png" alt="Logo" class="img-fluid">
     </a>
+    <!-- After login Navigation -->
+    <nav class="after-login-nav d-flex gap-3 align-items-center">
+      <!-- Destination Dropdown -->
+      <li class="nav-item active">
+        <a class="nav-link dropdown-toggle" href="#" id="destinationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="after-login-nav-icons" src="assets/after-login-announcements-dark.png" />Destination</a>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="destination-about-after-login.html"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Iraq</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />SA</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Egypt</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Jordan</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Syria</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />BM</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Yemen</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Tunisia</a></li>
+        </ul>
+      </li>
+      <!-- Announcements -->
+      <li class="nav-item">
+        <a class="nav-link" href="announcements.html"><img class="after-login-nav-icons" src="assets/after-login-announcements.png" />Announcements</a>
+      </li>
+
+      <!-- Registration -->
+      <li class="nav-item">
+        <a class="nav-link" href="haj-registration-dashboard.html"><img class="after-login-nav-icons" src="assets/after-login-registration.png" />Registration</a>
+      </li>
+
+      <!-- My Bookings Dropdown -->
+      <li class="nav-item dropdown" style="padding-right: 10px;">
+        <a class="nav-link dropdown-toggle" href="#" id="bookingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="after-login-nav-icons" src="assets/after-login-bookings-light.png" />My Bookings
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="bookings.html"><img class="after-login-dropdown-icons" src="assets/booking-status.png" />Booking Status</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/payment.png" />Make Payments</a></li>
+          <li><a class="dropdown-item" href="receipt.html"><img class="after-login-dropdown-icons" src="assets/receipt.png" />Receipts</a></li>
+          <li><a class="dropdown-item" href="documents.html"><img class="after-login-dropdown-icons" src="assets/document.png" />Document Status</a></li>
+          <li><a class="dropdown-item" href="qardan-hasana-form-details.html"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Qardan Hasana</a></li>
+        </ul>
+      </li>
+    </nav>
+    <!-- After login Navigation Ends -->
 
     <!-- Avatar Right -->
-    <div class="haj-profile avatar-profile dropdown">
+    <div class="avatar-profile dropdown">
       <img src="assets/login-profile-avatar.png" alt="Avatar" />
       <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="ms-2">Taha</span>
@@ -32,18 +75,23 @@
         <li><a class="dropdown-item" href="#">Logout</a></li>
       </ul>
     </div>
+
+    <!-- Hamburger for mobile -->
+    <button class="menu-toggle menu-toggle-after-login" id="menuToggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
   </header>
 
   <!-- Mobile Menu (hidden by default) -->
   <div class="mobile-menu px-3 py-2" id="mobileNav">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about-us-1.html" class="nav-link">About Us</a>
-    <a href="services.html" class="nav-link">Services</a>
-    <a href="gallery.html" class="nav-link">Gallery</a>
-    <a href="testimonials.html" class="nav-link">Testimonial</a>
     <a href="destination.html" class="nav-link">Destination</a>
-    <a href="contact.html" class="nav-link">Contact Us</a>
-    <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png" height="20"></a>
+    <a href="announcements.html" class="nav-link">Announcements</a>
+    <a href="haj-registration-dashboard.html" class="nav-link">Registration</a>
+    <a href="bookings.html" class="nav-link">My Bookings</a>
+    <a href="receipt.html" class="nav-link">Receipts</a>
   </div>
 
   <!-- BREADCRUMB -->

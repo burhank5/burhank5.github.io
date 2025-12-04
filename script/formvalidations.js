@@ -401,8 +401,8 @@ document.querySelector(".add-its-fhno-btn").addEventListener("click", function(e
       <td>${amountAdd}</td>
       <td>${relationshipAdd}</td>
       <td>
-        <button type="button" class="btn btn-sm btn-primary edit-row">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger delete-row">Delete</button>
+        <button type="button" class="btn btn-sm btn-primary btn-primary-edit edit-row">Edit</button>
+        <button type="button" class="btn btn-sm btn-danger btn-danger-delete delete-row">Delete</button>
       </td>
     `;
     tbody.appendChild(newRow);

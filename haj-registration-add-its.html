@@ -15,9 +15,52 @@
     <a href="index.html" class="logo">
       <img src="assets/fayz-logo.png" alt="Logo" class="img-fluid">
     </a>
+    <!-- After login Navigation -->
+    <nav class="after-login-nav d-flex gap-3 align-items-center">
+      <!-- Destination Dropdown -->
+      <li class="nav-item active">
+        <a class="nav-link dropdown-toggle" href="#" id="destinationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="after-login-nav-icons" src="assets/after-login-announcements-dark.png" />Destination</a>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="destination-about-after-login.html"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Iraq</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />SA</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Egypt</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Jordan</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Syria</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />BM</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Yemen</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Tunisia</a></li>
+        </ul>
+      </li>
+      <!-- Announcements -->
+      <li class="nav-item">
+        <a class="nav-link" href="announcements.html"><img class="after-login-nav-icons" src="assets/after-login-announcements.png" />Announcements</a>
+      </li>
+
+      <!-- Registration -->
+      <li class="nav-item">
+        <a class="nav-link" href="haj-registration-dashboard.html"><img class="after-login-nav-icons" src="assets/after-login-registration.png" />Registration</a>
+      </li>
+
+      <!-- My Bookings Dropdown -->
+      <li class="nav-item dropdown" style="padding-right: 10px;">
+        <a class="nav-link dropdown-toggle" href="#" id="bookingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="after-login-nav-icons" src="assets/after-login-bookings-light.png" />My Bookings
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="bookings.html"><img class="after-login-dropdown-icons" src="assets/booking-status.png" />Booking Status</a></li>
+          <li><a class="dropdown-item" href="#"><img class="after-login-dropdown-icons" src="assets/payment.png" />Make Payments</a></li>
+          <li><a class="dropdown-item" href="receipt.html"><img class="after-login-dropdown-icons" src="assets/receipt.png" />Receipts</a></li>
+          <li><a class="dropdown-item" href="documents.html"><img class="after-login-dropdown-icons" src="assets/document.png" />Document Status</a></li>
+          <li><a class="dropdown-item" href="qardan-hasana-form-details.html"><img class="after-login-dropdown-icons" src="assets/location-markers.png" />Qardan Hasana</a></li>
+        </ul>
+      </li>
+    </nav>
+    <!-- After login Navigation Ends -->
 
     <!-- Avatar Right -->
-    <div class="haj-profile avatar-profile dropdown">
+    <div class="avatar-profile dropdown">
       <img src="assets/login-profile-avatar.png" alt="Avatar" />
       <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="ms-2">Taha</span>
@@ -32,18 +75,23 @@
         <li><a class="dropdown-item" href="#">Logout</a></li>
       </ul>
     </div>
+
+    <!-- Hamburger for mobile -->
+    <button class="menu-toggle menu-toggle-after-login" id="menuToggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
   </header>
 
   <!-- Mobile Menu (hidden by default) -->
   <div class="mobile-menu px-3 py-2" id="mobileNav">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about-us-1.html" class="nav-link">About Us</a>
-    <a href="services.html" class="nav-link">Services</a>
-    <a href="gallery.html" class="nav-link">Gallery</a>
-    <a href="testimonials.html" class="nav-link">Testimonial</a>
     <a href="destination.html" class="nav-link">Destination</a>
-    <a href="contact.html" class="nav-link">Contact Us</a>
-    <a href="#" class="btn login-button">Login<img src="assets/its-logo-button.png" height="20"></a>
+    <a href="announcements.html" class="nav-link">Announcements</a>
+    <a href="haj-registration-dashboard.html" class="nav-link">Registration</a>
+    <a href="bookings.html" class="nav-link">My Bookings</a>
+    <a href="receipt.html" class="nav-link">Receipts</a>
   </div>
 
   <!-- BREADCRUMB -->
@@ -290,7 +338,7 @@
                 <td><img src="assets/qardan-details-profile-female.png" width="100"></td>
                 <td>30359759</td>
                 <td>Husain bhai Firoz bhai Ratlamwala</td>
-                <td><button class="btn btn-save btn-sm btn-cw-200">Add Passport Details</button></td>
+                <td><button class="btn btn-save btn-sm btn-cw-200" data-bs-toggle="modal" data-bs-target="#uploadDoc">Add Passport Details</button></td>
               </tr>
             </tbody>
           </table>
@@ -304,6 +352,247 @@
       <i class="bi bi-chevron-up"></i>
     </button>  
   </section>
+
+  <!-- Doc Upload Modal -->
+  <div class="modal fade" id="uploadDoc" tabindex="-1" aria-labelledby="uploadDocLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0">
+        
+        <!-- Custom Close Button -->
+        <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+  
+        <!-- Modal Header -->
+        <div class="modal-header border-0 text-center">
+          <h4 class="modal-title mx-auto fw-bold" id="uploadDocLabel">Add Passport Details</h4>
+        </div>
+
+        <!-- Mumin Details -->
+        <div class="modal-mumin-info p-3 me-5 ms-5">
+          <h3>Mumin Details</h3>
+          <div class="golden-separator"></div>
+          <div class="row">
+            <div class="col-lg-3 col-md-12 text-center">
+              <img src="assets/qardan-details-profile-female.png">
+            </div>
+            <div class="col-lg-9 col-md-12">
+              <h4 class="mt-4">Husain bhai Firoz bhai Ratlamwala</h4>
+              <br />
+              <h4><strong>303359759</strong></h4>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal Body with Form -->
+        <div class="modal-body p-3 me-5 ms-5 mt-5">
+          <h3>Passport Details</h3>
+          <div class="blue-separator"></div>
+          <form class="p-2">
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3">
+                <label for="passportNo" class="form-label required">Passport No</label>
+                <input type="text" class="form-control" id="passportNo" placeholder="Z5784237" required>
+              </div>
+          
+              <div class="col-md-6 mb-3">
+                <label for="title" class="form-label required">Title</label>
+                <select class="form-select" id="title" required>
+                  <option selected disabled value="">Select</option>
+                  <option>MR.</option>
+                  <option>MRS.</option>
+                  <option>MS.</option>
+                </select>
+              </div>
+            </div>
+          
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="firstName" class="form-label required">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="AHMED" required>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                <label for="middleName" class="form-label required">Middle Name</label>
+                <input type="text" class="form-control" id="middleName" placeholder="YUSUF" required>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                <label for="lastName" class="form-label required">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="VAZIR" required>
+              </div>
+            </div>
+          
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="placeOfBirth" class="form-label">Place of Birth</label>
+                <input type="text" class="form-control" id="placeOfBirth" placeholder="MUMBAI">
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                <label for="gender" class="form-label required">Gender</label>
+                <select class="form-select" id="gender" required>
+                  <option selected disabled value="">Select</option>
+                  <option>MALE</option>
+                  <option>FEMALE</option>
+                  <option>OTHER</option>
+                </select>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                <label for="placeOfIssue" class="form-label">Place of Issue</label>
+                <input type="text" class="form-control" id="placeOfIssue" placeholder="MUMBAI">
+              </div>
+            </div>
+          
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="dateOfBirth" class="form-label required">Date of Birth (dd/mm/yyyy)</label>
+                <input type="date" class="form-control" id="dateOfBirth" required>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                <label for="dateOfIssue" class="form-label required">Date of Issue (dd/mm/yyyy)</label>
+                <input type="date" class="form-control" id="dateOfIssue" required>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                <label for="dateOfExpiry" class="form-label">Date of Expiry (dd/mm/yyyy)</label>
+                <input type="date" class="form-control" id="dateOfExpiry" required>
+              </div>
+            </div>
+          
+            <div class="row mb-3">
+              <div class="col-md-3 mb-3">
+                <label for="Nationality" class="form-label required">Nationality</label>
+                <input type="text" class="form-control" id="Nationality" placeholder="India">
+              </div>
+          
+              <div class="col-md-3 mb-3">
+                <label for="state" class="form-label required">State</label>
+                <select class="form-select" id="state">
+                  <option selected>Maharashtra</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Gujurat</option>
+                </select>
+              </div>
+          
+              <div class="col-md-3 mb-3">
+                <label for="city" class="form-label required">City</label>
+                <select class="form-select" id="city">
+                  <option selected>Mumbai</option>
+                  <option>Pune</option>
+                  <option>Surat</option>
+                </select>
+              </div>
+          
+              <div class="col-md-3 mb-3">
+                <label for="pincode" class="form-label required">Pincode</label>
+                <input type="text" class="form-control" id="pincode" placeholder="400054">
+              </div>
+            </div>
+          
+            <div class="row mb-3 mb-3">
+              <div class="col-md-12">
+                <label for="address" class="form-label required">Address</label>
+                <textarea class="form-control" id="address" placeholder="Mumbai, Maharashtra"></textarea>
+              </div>
+            </div>
+          
+            <div class="row mb-3">
+              <div class="col-md-4 mb-3">
+                <label for="spousename" class="form-label">Spouse Name</label>
+                <input type="text" class="form-control" id="spousename" placeholder="Enter Spouse Name">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="mothername" class="form-label">Mother Name</label>
+                <input type="text" class="form-control" id="mothername" placeholder="Enter Mother Name">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="pancard" class="form-label">Pancard</label>
+                <input type="text" class="form-control" id="pancard" placeholder="Enter Pancard Number">
+              </div>
+            </div>
+          
+            <div class="row mb-3 mt-5">
+              <div class="col-md-12 d-flex mb-4" style="align-items: center;">
+                <input class="form-check-input" type="checkbox" id="expiryCheck" required>
+                <label class="form-check-label fs-5 ms-2 required" for="expiryCheck">Check Expiry Date!! Passport is valid from six months from the date of travel.</label>
+              </div>
+          
+              <div class="col-md-12 d-flex mb-4" style="align-items: center;">
+                <input class="form-check-input" type="checkbox" id="dataCheck" required>
+                <label class="form-check-label fs-5 ms-2 required" for="dataCheck">Check Data!! Data entered is correct as per valid passport?</label>
+              </div>
+          
+              <div class="col-md-12 d-flex mb-4" style="align-items: center;">
+                <input class="form-check-input" type="checkbox" id="validPPCheck" required>
+                <label class="form-check-label fs-5 ms-2 required" for="validPPCheck">Passport has sufficient pages and is not damaged.</label>
+              </div>
+            </div>
+          
+            <div class="text-center">
+              <button type="submit" class="btn btn-save btn-text">Submit</button>
+            </div>
+          </form>   
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <div class="modal-header border-0">
+          <img src="assets/form-submit-checkmark.png" style="margin: 0 auto; width:80px;">
+        </div>
+        <div class="modal-body">
+          <h4>Passport details saved successfully!</h4>
+        </div>
+        <div class="modal-footer border-0" style="margin: 0 auto;">
+          <button type="button" class="btn btn-save" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script to show success modal ater 2 sec -->
+  <script>
+    const form = document.getElementById("passport-details-add-form");
+    const submitBtn = document.getElementById("submitBtn");
+    const btnText = submitBtn.querySelector(".btn-text");
+    const spinner = submitBtn.querySelector(".spinner-border");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      // Disable button and show loader
+      submitBtn.disabled = true;
+      btnText.classList.add("d-none");
+      spinner.classList.remove("d-none");
+
+      // Simulate form submission delay (2 seconds)
+      setTimeout(() => {
+        // Reset loader
+        submitBtn.disabled = false;
+        btnText.classList.remove("d-none");
+        spinner.classList.add("d-none");
+
+        // Hide upload doc modal, show success modal
+        const formModal = bootstrap.Modal.getInstance(document.getElementById('uploadDoc'));
+        formModal.hide();
+
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+
+        form.reset();
+      }, 2000);
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">

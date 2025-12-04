@@ -84,3 +84,16 @@
   background: var(--secondary) !important;
   color: var(--warning) !important;
 }
+
+/** CSS for about destination after login buttons starts here **/
+#itsFormModal .btn.btn-cancel:hover {
+  color: var(--black);
+  border: 2px solid var(--black);
+}
+
+#itsFormModal .btn.btn-submit:hover {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+/** CSS for about destination after login buttons starts here **/
